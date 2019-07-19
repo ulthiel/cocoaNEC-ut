@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="101000" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TwoPort">
+            <connections>
+                <outlet property="ntAdmittanceMatrix" destination="132" id="196"/>
+                <outlet property="ntLocation1Matrix" destination="139" id="192"/>
+                <outlet property="ntLocation1Segment" destination="138" id="194"/>
+                <outlet property="ntLocation2Matrix" destination="145" id="193"/>
+                <outlet property="ntLocation2Segment" destination="144" id="195"/>
+                <outlet property="tlAdmittance1Matrix" destination="118" id="184"/>
+                <outlet property="tlAdmittance2Matrix" destination="124" id="185"/>
+                <outlet property="tlCrossedButton" destination="113" id="186"/>
+                <outlet property="tlLocation1Matrix" destination="96" id="189"/>
+                <outlet property="tlLocation1Segment" destination="94" id="190"/>
+                <outlet property="tlLocation2Matrix" destination="102" id="188"/>
+                <outlet property="tlLocation2Segment" destination="101" id="191"/>
+                <outlet property="tlMatrix" destination="73" id="187"/>
+                <outlet property="typeTab" destination="7" id="92"/>
+                <outlet property="window" destination="5" id="93"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Networks" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Networks Window" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="-1189" y="468" width="519" height="381"/>
+            <rect key="screenRect" x="-1680" y="0.0" width="1680" height="1050"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="519" height="381"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tabView controlSize="small" id="7">
+                        <rect key="frame" x="-46" y="-18" width="593" height="391"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <tabViewItems>
+                            <tabViewItem label="Two Port Network" identifier="0" id="8">
+                                <view key="view" id="9">
+                                    <rect key="frame" x="10" y="25" width="573" height="353"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="135">
+                                            <rect key="frame" x="67" y="31" width="77" height="143"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="77" height="13"/>
+                                            <size key="intercellSpacing" width="8" height="13"/>
+                                            <textFieldCell key="prototype" sendsActionOnEndEditing="YES" alignment="right" tag="-1" id="208">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <string key="title">Real
+</string>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <cells>
+                                                <column>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" state="on" alignment="right" title="Y11 (real)" id="177">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" alignment="right" tag="1" title="Y11 (imag)" id="178">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" alignment="right" tag="2" id="179">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <string key="title">Y12 (real)
+</string>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" alignment="right" tag="3" id="180">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <string key="title">Y12 (imag)
+</string>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" alignment="right" tag="4" id="181">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <string key="title">Y22 (real)
+</string>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" alignment="right" tag="5" id="182">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <string key="title">Y22 (imag)
+</string>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <textField verticalHuggingPriority="750" id="138">
+                                            <rect key="frame" x="216" y="214" width="48" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="198">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="139">
+                                            <rect key="frame" x="100" y="215" width="114" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="114" height="16"/>
+                                            <size key="intercellSpacing" width="4" height="8"/>
+                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" controlSize="small" inset="2" id="209">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <cells>
+                                                <column>
+                                                    <buttonCell type="radio" title="Center" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="142">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="End 1" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="1" inset="2" id="140">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="End 2" imagePosition="left" alignment="left" controlSize="small" tag="2" inset="2" id="141">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="Segment number" imagePosition="left" alignment="left" controlSize="small" tag="3" inset="2" id="143">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <textField verticalHuggingPriority="750" id="144">
+                                            <rect key="frame" x="462" y="214" width="48" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="199">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="145">
+                                            <rect key="frame" x="346" y="215" width="114" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="114" height="16"/>
+                                            <size key="intercellSpacing" width="4" height="8"/>
+                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" controlSize="small" inset="2" id="210">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <cells>
+                                                <column>
+                                                    <buttonCell type="radio" title="Center" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="149">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="End 1" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="1" inset="2" id="146">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="End 2" imagePosition="left" alignment="left" controlSize="small" tag="2" inset="2" id="148">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="Segment number" imagePosition="left" alignment="left" controlSize="small" tag="3" inset="2" id="147">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="150">
+                                            <rect key="frame" x="294" y="192" width="5" height="161"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <font key="titleFont" metaFont="system"/>
+                                        </box>
+                                        <textField verticalHuggingPriority="750" id="152">
+                                            <rect key="frame" x="152" y="326" width="53" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Port 1" id="200">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="153">
+                                            <rect key="frame" x="401" y="324" width="53" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Port 2" id="201">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="154">
+                                            <rect key="frame" x="33" y="190" width="528" height="5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <font key="titleFont" metaFont="system"/>
+                                        </box>
+                                        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="169">
+                                            <rect key="frame" x="33" y="315" width="528" height="5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <font key="titleFont" metaFont="system"/>
+                                        </box>
+                                        <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="132">
+                                            <rect key="frame" x="153" y="23" width="324" height="154"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="324" height="19"/>
+                                            <size key="intercellSpacing" width="8" height="8"/>
+                                            <textFieldCell key="prototype" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="-1" drawsBackground="YES" id="207">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <cells>
+                                                <column>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="171">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="1" drawsBackground="YES" id="172">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="2" drawsBackground="YES" id="173">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="3" drawsBackground="YES" id="174">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="4" drawsBackground="YES" id="175">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="5" drawsBackground="YES" id="176">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Transmission Line" identifier="1" id="64">
+                                <view key="view" id="65">
+                                    <rect key="frame" x="10" y="25" width="573" height="353"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="73">
+                                            <rect key="frame" x="135" y="32" width="275" height="46"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="275" height="19"/>
+                                            <size key="intercellSpacing" width="8" height="8"/>
+                                            <textFieldCell key="prototype" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="-1" drawsBackground="YES" id="212">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <cells>
+                                                <column>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="116">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="1" drawsBackground="YES" id="117">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="66">
+                                            <rect key="frame" x="48" y="38" width="77" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="77" height="13"/>
+                                            <size key="intercellSpacing" width="8" height="13"/>
+                                            <textFieldCell key="prototype" sendsActionOnEndEditing="YES" alignment="right" tag="-1" id="211">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <string key="title">Real
+</string>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <cells>
+                                                <column>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" state="on" alignment="right" title="z0" id="114">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" alignment="right" tag="1" title="Length" id="115">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <textField verticalHuggingPriority="750" id="94">
+                                            <rect key="frame" x="216" y="214" width="48" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="202">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="96">
+                                            <rect key="frame" x="100" y="215" width="114" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="114" height="16"/>
+                                            <size key="intercellSpacing" width="4" height="8"/>
+                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" controlSize="small" inset="2" id="213">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <cells>
+                                                <column>
+                                                    <buttonCell type="radio" title="Center" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="97">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="End 1" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="1" inset="2" id="98">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="End 2" imagePosition="left" alignment="left" controlSize="small" tag="2" inset="2" id="99">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="Segment number" imagePosition="left" alignment="left" controlSize="small" tag="3" inset="2" id="100">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <textField verticalHuggingPriority="750" id="101">
+                                            <rect key="frame" x="462" y="214" width="48" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="203">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="102">
+                                            <rect key="frame" x="346" y="215" width="114" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="114" height="16"/>
+                                            <size key="intercellSpacing" width="4" height="8"/>
+                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" controlSize="small" inset="2" id="214">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <cells>
+                                                <column>
+                                                    <buttonCell type="radio" title="Center" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="105">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="End 1" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="1" inset="2" id="103">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="End 2" imagePosition="left" alignment="left" controlSize="small" tag="2" inset="2" id="104">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="Segment number" imagePosition="left" alignment="left" controlSize="small" tag="3" inset="2" id="106">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="107">
+                                            <rect key="frame" x="294" y="100" width="5" height="253"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <font key="titleFont" metaFont="system"/>
+                                        </box>
+                                        <textField verticalHuggingPriority="750" id="109">
+                                            <rect key="frame" x="152" y="326" width="53" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Port 1" id="204">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="110">
+                                            <rect key="frame" x="401" y="324" width="53" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Port 2" id="205">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="111">
+                                            <rect key="frame" x="33" y="98" width="528" height="5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <font key="titleFont" metaFont="system"/>
+                                        </box>
+                                        <button id="113">
+                                            <rect key="frame" x="425" y="60" width="105" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Crossed Line" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="206">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                        <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="118">
+                                            <rect key="frame" x="164" y="140" width="114" height="46"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="114" height="19"/>
+                                            <size key="intercellSpacing" width="8" height="8"/>
+                                            <textFieldCell key="prototype" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="-1" drawsBackground="YES" id="215">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <cells>
+                                                <column>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="119">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="1" title="0" drawsBackground="YES" id="120">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="121">
+                                            <rect key="frame" x="46" y="144" width="113" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="113" height="13"/>
+                                            <size key="intercellSpacing" width="8" height="13"/>
+                                            <textFieldCell key="prototype" sendsActionOnEndEditing="YES" alignment="right" tag="-1" id="216">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <string key="title">Real
+</string>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <cells>
+                                                <column>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" state="on" alignment="right" title="Admittance (real)" id="122">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" alignment="right" tag="1" title="Admittance (imag)" id="123">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="124">
+                                            <rect key="frame" x="413" y="140" width="114" height="46"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="114" height="19"/>
+                                            <size key="intercellSpacing" width="8" height="8"/>
+                                            <textFieldCell key="prototype" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="-1" drawsBackground="YES" id="217">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <cells>
+                                                <column>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="126">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="1" title="0" drawsBackground="YES" id="125">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="127">
+                                            <rect key="frame" x="295" y="144" width="113" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="113" height="13"/>
+                                            <size key="intercellSpacing" width="8" height="13"/>
+                                            <textFieldCell key="prototype" sendsActionOnEndEditing="YES" alignment="right" tag="-1" id="218">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <string key="title">Real
+</string>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <cells>
+                                                <column>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" state="on" alignment="right" title="Admittance (real)" id="128">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <textFieldCell sendsActionOnEndEditing="YES" alignment="right" tag="1" title="Admittance (imag)" id="129">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="130">
+                                            <rect key="frame" x="33" y="315" width="528" height="5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <font key="titleFont" metaFont="system"/>
+                                        </box>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+            </view>
+        </window>
+    </objects>
+</document>

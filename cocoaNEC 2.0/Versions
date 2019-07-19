@@ -1,0 +1,419 @@
+Started: Aug 1 2007
+Rewrite of original cocoaNEC program, replacing NC with a spreadsheet user interface.
+
+v 0.10	Aug 30 2007
+	Initial alpha release to K4DSP, AA7QU, AA4LR and WB6RSE.
+	Subsequent release to KK6MC/5, NU4G, K9JRI.
+
+v 0.11	Aug 30, 2007
+	Added Run Model and Command R to File Menu
+	Added more fixes to avoid using 10 column floating point fields (bug in nec2c.rxq)
+	Added missing RP card for directivity
+
+v 0.12	Aug 31, 2007
+	Moved Run Model to a new Model Menu.
+	Fixed bug where Environment dictionary was not updated when a new model is loaded.
+
+v 0.13	Aug 31, 2007
+	Implemented reference Antenna
+	Tabbing in spreadsheet from Cell Editor (formulaBar)
+
+v 0.14	Sep 2, 2007
+	Implemented free space and perfect grounds.
+	Added fresh and salt water grounds.
+	Move aux windows to sheets.
+
+v 0.15	Sep 6, 2007
+	Geometry and Currents.
+	Element Inspector menu and keyboard shortcut.
+
+v 0.16	Sep 7, 2007
+	Allow removal of all output contexts.
+
+v 0.17	Sept 8, 2007
+	Disable File menu states that are not currently for hollerith/spreadsheet.
+	Implemented frequency sweeps.
+	
+v 0.18	Sep 9, 2007
+	Work around nec2c bug with single segment wires.  Changed 1 segment wires to have 3 segments.
+	Warn when there is no excitation or no wire.
+	Menu selection to view spreadsheet as formula.
+
+v 0.19  Sep 9, 2007
+	Fixed cosine bug.
+
+v 0.20	Sept 12, 2007
+	Removed angle menu, sind() for sin of degrees
+	Added current source.
+	Added Sommerfeld ground.
+	Added Radial and option to draw it.
+
+v 0.21	Sept 13, 2007
+	Fixed current source release bug.
+	Fixed bug with radials values overflowing float format
+	
+v 0.22 Sept 30, 2007
+	Fixed bug where source of hollerith deck was from fixed directory.
+	Fixed bug with Azimuth pattern (elevation angle was also changing)
+	Implemented NC
+	
+v 0.23 Oct 3, 2007
+	NC Network and Transmission lines.
+	Make NC window the active window after a Command-G.
+	"Use Previous Run As Reference"
+	Removed small current segments in spreadsheet when current source is removed.
+	Added directivity to plots
+
+v 0.24 Oct 6, 2007
+	if-then-else and while-break statements in NC.
+	necRadials
+	
+v 0.25 Oct 12, 2007
+	changed GE 1 to GE -1 for non free space case
+	repeat statement
+	extened thin wire kernels for Spreadsheet and NC
+	run NC on separate thread
+	added "stop" button, pause() to NC
+	added NEC-2 grounds to Spreadsheet
+
+v 0.26 Oct 13, 2007
+	Lock an NC run when previous run still active.
+	abs() and fabs() in NC
+	fixed freespace bug in NC
+
+v 0.27 Oct 14, 2007
+	Added plots to output summary
+
+v 0.28 Oct 17, 2007
+	Print composite summary view.
+	Fixed multiple current source bug in Geometry View.	
+	Fixed NC to emit NT cards for current sources before any EX cards.
+	Fixed Spreadsheet to emit NT cards for current sources before any EX cards.
+
+v 0.29 Oct 18, 2007
+	Added efficiency variable to NC.
+
+v 0.30 Oct 21, 2007
+	Added 3D plot..
+
+v 0.31 Oct 22, 2007
+	Added vertical and horizontal polarization to 3d plot.
+
+v 0.32 Oct 22, 2007
+	Added power to plot and auto contrast.
+
+v 0.33 Oct 23, 2007
+	prettied up printing.
+
+v 0.34 Oct 24, 2007
+	clean up for beta.
+	
+v 0.35 Oct 27, 2005
+	fixed SymbolTable bug that crashes in Leopard.
+
+v 0.36 Oct 29, 2007
+	Clean up threads and memory leaks.
+	Use period for decimals for European systems.
+
+v 0.37 Nov 2, 2007
+	Removed extraneous threads.
+
+v 0.38 Nov 5, 2007
+	Allow nc and nec extension files to open by double clicking.
+
+v 0.39 Nov, 12, 2007
+	Directivity computed over 4 pi steradians.
+
+v0.40 Nov 26, 2007
+	Fixed format values for numbers smaller than 10e-9 in Spreadsheet model
+
+v0.41 Dec 8, 2007
+	Allow windows line ending for card deck.
+	Converted NEC-4 GE format to NEC-2 GE format.
+	Added 3D RP generation for Hollerith decks.
+	Rearrange card decks so that EX follows an FR card.	
+	Removed 3-segment restriction to wires, and added a warning instead.
+	Spreadsheet frequency set not completely correct (4-th frequency not restored)
+	Fixed format values for numbers smaller than 10e-9 in NC model.
+	Don't send NC models with missing excitation to NEC-2.
+	Caption position in SWR view.
+
+v0.42 Jan 2008
+	Replaced setFrequency's functionality with addFrequency.
+	Change setFrequency to first clear the frequency array.
+
+v0.43 Feb 2008
+	Inhibited second print for Summary View.
+
+v0.44 April 10, 2008
+	Fixed bug with single precision Sommerfeld approximation.
+	Moved Quad Precision to system function.
+	Added line() function to allow segments to be as defined instead of odd numbers.
+	sflds for double float
+	Scaled magitude in Geometry view
+
+v0.45 Apr 17, 2008
+	Check dirty before closing NC windows.
+	Auto tabbing NC source view.
+	Read NEC-4 output into Output Window.
+	Documentation menu.
+	Fixed precedence bug in NC; a/b/c was behaving as a/(b/c).
+	Draws single segment wires in GeometryView.
+	Gradient in GeometryView.
+	Scale and pan in GeometryView.
+	Draw loads into GeometryView.
+	
+v0.46 May 7, 2008
+	Added missing arcsine family.
+	Clear radials, far field plot arrays and wire tag when runModel() is called from a control() block.
+	Implemented tapered wire.
+	Changed temporary card deck files to use .dat instead of .txt extension for NEC-4 compatibility.
+	NEC-4 engine and context.
+	SWR View shows reference.
+
+v0.47	May 31, 2008
+	Applied NEC-2 bugfix for extended thin wire approximation with patches http://5b4az.chronos.org.uk/pkg/nec2/nec2c/NEC2-bug.txt
+	Run NEC-4 task to the directory the input file is in (for SOMD.NEC and NGF.NEC files).
+
+v0.48	Sept 1, 2008
+	Networks could not share a common wire.
+	Crossed transmission line was not being crossed.
+
+v0.49  Oct 9, 2008
+	Fixed free space bug when model is read in by the Spreadsheet interface.
+
+v 0.50	Nov 13, 2008
+	Fixed missing MOD function in nextToken.
+
+v 0.51	February 17 2009
+	Added incident plane wave excitation (Rick Chapman)
+	Folded in taperedWire bug fixes from K1GQ
+	Fixed format bug for spreadsheet frequencies above 1000.0 MHz
+
+v 0.52	May 31, 2009
+	Add float type (equivalent to real).
+	Add void type.
+	Add return statement (return (void), return int, return real and return element)
+	Add functions to NC.
+	Add #include.
+	Add **Card calls.
+
+v 0.53	started June 4, 2009
+	Add vector and transform types.
+	Add member (.) operator for vectors.
+	Add pre ++ and -- .
+	Recur on symbolName eror message when the DAG node is an operator.
+
+v 0.54  started June 7, 2009
+	Add arrays.
+	
+v 0.55	started June 12, 2009
+	Fixed NC window resize (not resizing Output console, Listing and Card Deck).
+	Check for update.
+	Bug fix: Underscore bug for variable names in NC.
+	Added GM card as Transform to Spreadsheet.
+	Added arc.
+	Added voltageFeedAtSegment and currentFeedAtSegment.
+	Added networkAtSegments and transmissionLineAtSegments.
+	Added setElevationPlotDistance and setAzimuthPlotDistance.
+	Use NC as intermendiate language for spreadsheet.
+	Dirty check for spreadsheet windows.
+	Bug fix: Was not saving Multiple Frequency selection.
+	
+v 0.56	started Aug 10, 2009
+	Bug with function return
+	taperedWire returning wrong number of segments for feed.
+
+v 0.57	started Aug 17, 2009
+	Scientific notion for real constants was eating the next character.  This was exposed by the spreadsheet interface. (KU4AF)
+	g_frequency etc in NC evaluations.
+
+v 0.58	Sept 3, 2009
+	Loading values less than 0.000001 got rounded up to 0.000001.
+
+v 0.59	Sept 4, 2009
+	Move global definiition before variable assignments in Spreadsheet.m
+
+v 0.60	Sept 8, 2009
+	Potential memory leak in -DrawSmithChart in SWRView
+
+v 0.61 Sept 19, 2009
+	Generate only one 3-D RP card (r)
+	Spin off Snow Leopard (10.6) builds
+	Multiprocessing for gcd (g).
+	ijx bugfix in nec2c (i).
+	Change nec2c globals ija and zpk to locals ijaa and zpka to allow multiprocessing (n)
+	Emit extra XQ card after FR card (to facilitate multiprocessing)
+	Increase size of output context for large listings.
+
+v 0.62
+	Added Average Gain computation (+NC variable for it)
+	Changed bundle to w7ay.cocoaNEC-2.0
+
+v 0.63
+	Included Greek localization by Sotirios Papathanasiou
+	Listing bug for NC lines that exceeded 180 characters long.
+
+v 0.64 (May 31, 2010)
+	Work around NSTextView's slowdown for Summary.
+	Deferred NEC-2 Output file listing.
+	Removed some larger memory leaks.
+	Fixed Export Deck problem (not properly checking runWorkFlowCompile)
+
+v 0.65 (June 27, 2010)
+	Fix UTF8String problem
+	
+v 0.66 (July 9, 2010)
+	Multiple printf() (Jon, W1JP)
+	
+v 0.67 (Oct 5, 2010)
+	Fixed printf bug.
+	%g in format
+	Circular polarization.
+	Summary view plots follow polarization options.
+
+v 0.68 (Nov 26, 2010)
+	V+H and LHCP+RHCP plots.
+	10.4 compatibility with Xcode 3.2.4.
+
+v 0.69 (May 25, 2011)
+	Fixed directivity bug.  Originally reported by Erhan Kudeki (U of Illinois).
+	Fixed printing bug (releasing autorelease object). (K1GQ)
+
+v 0.70 (June 24, 2011)
+	Geometry view's azimuth was off by 90 degrees. (Toomas Altosaar)
+	Return statement does not work from an "if" or "else" block. (Toomas Altosaar)
+	Break out of the execution loop after encountering the first divide by zero.
+	Fixed reference menu items in Output menu (missing connection to the Output menu in menu bar).
+	Resize output window.  Save window size and location in plist.
+	SWR circle optional in Output option.
+	Plist saves window positions, Zo, SWR circle.
+	Use BezierPath to fill and stroke the SWRView instead of using CG.
+	Changed getline to hgetline in Hollerith.m (conflict with 10.7 SDK, found by K1GQ).
+	Removed local hpol[] desciption in gcd_rdpat and expanded the global hpol[] to take 4 elements (bug found in 10.7 by K1GQ)
+	Smith Chart SWR trajectory interpolation and Scalar Chart interpolation.
+	frequencySweep( freq0, freq1, steps ) for NC to replace multiple addFrequencies.
+	F/B ratio for worst case elevation and same elevation of front lobe.
+	Use alpha to control thickness when printing.
+	Print option in Output window drawer.
+	Remove Greek localization (too many changes at this point).
+	
+v0.71 (July 5, 2011)
+	AuxSWRView displaying "50 -j-10" instead of "50 -j10" (K1GQ)
+
+v0.72 (July 10, 2011)
+	Direct web accesses (update check and manuals) to w7ay.net
+
+v0.73 (July 11, 2011)
+	Added IS (NEC-4) insulate() NC command.
+	Smart Interpolation for SWR view.
+	Remove 3 segment warning for feedpoints for NEC-4 (K1GQ)
+	
+v0.74 (Sept 8, 2011)
+	micro, nano and pico
+
+v0.75 (Jan 8, 2011)
+	Multiple NCLoad per wire (v0.75a)
+	Yurkov (RA9MB) approximation for IS for NEC-2, using Dimitry (UA3AVR) simplification (v0.75b).
+	Geometry View properties upon click (v0.75c)
+	Draw Unit Vectors in Geometry View (v0.75c)
+	Added Index to Documentation (v0.75d)
+	Renamed wire_ etc to wireCard, etc (v0.75e)
+	Draw multiple helixes (v0.75f).
+	Implemented helix in NEC4 context (v0.75g)
+	Removed y radius from helixCard to make it compatible with NEC-4 (v0.75h).
+	Connect Gain scale to summary view, etc (v0.75i)
+
+v0.76 (Jan 17, 2011)
+	Added stack frame save and restore to fix NC recursion bug.
+
+v0.77 (April 22, 2012)
+	Added NEC-4 loads to NEC4Context and StructureImpedance (NEC-4 loads did not show up in Geometry view).
+	Fixed bug in transmissionLineAtSegments
+	Added yurkovInsulate() and w4rnlInsulate().
+	Run progress indicators and stop button in main thread (v0.77m)
+
+v0.78 (May 25, 2012)
+	NEC4 Output was not refreshing if already opened to the tabview.
+	Geometry View of small objects now draw properly.
+	Incorporated nec2c bug fix from 5B4AZ to fix the single segment error.
+	Better interpolation of Smith Chart and Scale chart curves by first interpolating VSWR.
+	NEC 4.2 preferences.
+	Uses GN3 if using Sommerfeld in NEC-4.2.
+
+v0.79 (May 26, 2012)
+	Backed out interpolating (would not handle multiple frequency groups)
+	
+v0.80 (May 27, 2012)
+	Added GN2 preference for NEC-4.2.
+	
+v0.81 (June 18, 2012)
+	Added impedanceTermination.
+	farFieldDisplacement to allow multiple current sources and terminations at the same segment.
+	Allow frequencySweep to work with frequency-dependent NT cards.
+	Fix bug in line() function in NC.
+	Fixed bug where NEC-4.2 GN3 was calling the nec2c output context (K1GQ).
+	Coax and Twinlead functions. (v0.81b)
+	Fixed bug with NCCompound local identifierList -- it was clearing identifierList for each local declaration line. (v0.81c)
+	Cumulative feedpoint (so control loop creates multiple feedpoints) (v0.81d)
+	Improved scalar plot horizontal axis for single feedpoint. (v0.81d)
+	Option to draw distributed loads in Geometry view (v0.81d)
+	Draw wire currents (v0.81e)
+	NC textviews are now searchable (NC window changed from NSPanel to NSWindow)
+	
+v0.82 (July, Oct 18, 2012)
+	Sanity check for ill formed radiation pattern from bad RP card.
+	Fixed type of binary operator for integers (was returning double type).  This caused array index that is an expression to crash (K9AN) (v0.82b)
+
+v0.83 (Nov 11, 2012)
+	lumpedSeriesTermination and lumpedParallelTermination.
+
+v0.84 (Nov 18, 2012)
+	fixed case where R is less than 1 ohm for NCSERIESTERMINATOR
+
+v0.85 (Jan 5, 2013)
+	added currentFeedWithPhasor and currentFeedWithPhasord
+	spreadsheet TLatSegments bug
+
+v0.86 (Nov 2013)
+	change GW format from 3 digits of tag and 5 digits of segments to 4 digits each.  (Elwood Downey, WB0OEW)
+	
+v0.87 (Jan 2015)
+	Yosemite returns nil file arrays instead of array with no entry.  (Jon Pellant, W1JP)
+	
+v0.88 (May 2016)
+	Built in Xcode 7 for 10.11.4
+    NECFormat now used to change formats with 3 digit (original NEC-2 format) or 4 digit tags, and reducing segments field (see 0.86 above).
+
+v0.89 (May 30, 2016)
+    Remove temporary hack to start tags at 999 (to test 4 digit format)
+ 
+v 0.90 (May 30, 2016)
+    CGContext text color set using NSFont attribute.
+    
+v 0.91 (April, 2017)
+    replaced reference to arc_ and helix_ by arcCard and helixCard.
+
+v 0.92 (Feb 2018)
+    activate window in MainThread in nc.m to prevent thread safe crashes
+    fixed typo with exp function, was calling sqrt instead of exp (Al Pawlowski, K6AVP)
+    fixed bug with clicks on SWR view
+    fixed crash when exiting after recent model was not found.
+    added resistiveLoad, inductiveLoad, capacitiveLoad
+    added resistiveTermination, inductiveTermination, capacitiveTermination
+    added JSC1318 to coax type
+    removed keyboard shortcut (command-H) to hide cocoaNEC
+    added splash window when cocoaNEC is launched
+    display azimuth and elevation angles in summary view plots
+
+Bugs:
+	
+To Do:
+	
+	Preprocessor to include #include and #define
+	Draw multiple helices? (Quadrafilar helix.)
+	(abandoned) AppleScript submission of NC program.	
+	(abandoned) Get rid of expression evaluator in Spreadsheet
+	(abandoned) Phong shading for 3D plot
+	(old) EZNEC import to translate EZNEC output into NC
+

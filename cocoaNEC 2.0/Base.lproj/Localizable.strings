@@ -1,0 +1,9 @@
+﻿/* check for updates menu response */
+"Update information error" = "Update information not available.";
+"Update file not found" = "Could not open URL http://www.w7ay.net/site/Downloads/updates.txt";
+"No update info" = "Sorry. The URL http://www.w7ay.net/site/Downloads/updates.txt does not contain update information for cocoaNEC.";
+"New download available" = "A newer version of cocoaNEC is available.";
+"Update available info" = "cocoaNEC 2.0 v%4.2f is available for download.";
+"Up to date" = "Your copy of cocoaNEC is up to date.";
+"Up to date info" = "cocoaNEC 2.0 v%4.2f is already the latest version." ;
+

@@ -1,0 +1,24 @@
+
+README File for nec2c-cocoa
+Kok Chen, W7AY
+
+cocoaNEC generates two copies of nec2c, one for double precision and one for quad precision.
+
+This is done by placing the original code in nec2common.m.  Original variable types in nec2c.c are replaced by abstract types doubletype and complextype in nec2common.m.
+
+nec2cquad.m first typedef doubletype as "long double" and complextype as "long double complex" before including the
+nec2common.m, to create a quad precision version of nec2c.
+
+The entry point for the double precision nec2c is necDouble(...) instead of main().
+
+nec2cdouble.m first typedef doubletype as "double" and complextype as "double complex" before including the
+nec2common.m, to create a quad precision version of nec2c.
+
+The entry point for the double precision nec2c is necQuad(...) instead of main().
+
+--------------
+
+Note that nec2common.m is otherwise not directly included in the build target of cocoaNEC.
+
+If only double floats is needed, simply include nec2cdouble.m and nec2common.m in the project (but leave nec2common.m out of the build target of the project).
+

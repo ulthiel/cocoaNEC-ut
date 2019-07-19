@@ -1,0 +1,70 @@
+//
+//  Transforms.h
+//  cocoaNEC
+//
+//  Created by Kok Chen on 6/19/09.
+//	-----------------------------------------------------------------------------
+//  Copyright 2007-2016 Kok Chen, W7AY. 
+//
+//	Licensed under the Apache License, Version 2.0 (the "License");
+//	you may not use this file except in compliance with the License.
+//	You may obtain a copy of the License at
+//
+//		http://www.apache.org/licenses/LICENSE-2.0
+//
+//	Unless required by applicable law or agreed to in writing, software
+//	distributed under the License is distributed on an "AS IS" BASIS,
+//	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//	See the License for the specific language governing permissions and
+//	limitations under the License.
+//	-----------------------------------------------------------------------------
+
+#import "TransformObject.h"
+#import "Config.h"
+
+typedef struct {
+	double rotateX ;
+	double rotateY ;
+	double rotateZ ;
+	double translateX ;
+	double translateY ;
+	double translateZ ;
+} TransformStruct ;
+
+
+@interface Transforms : NSObject <NSComboBoxDataSource> {
+
+	IBOutlet id table ;		// table view
+	IBOutlet id window ;
+	
+	NSMutableArray *transformArray ;		//  array of array of (rx, ry, rz, tx, ty, tz)
+	NSMutableDictionary *dictionary ;
+	NSMutableArray *plist ;
+	int rows ;
+	
+	NSTableColumn *nameColumn, *transformColumn[6] ;
+	id delegate ;
+	
+	NSWindow *controllingWindow ;
+}
+
+- (IBAction)addTransform:(id)sender ;
+- (IBAction)removeTransform:(id)sender ;
+
+- (IBAction)closeSheet:(id)sender ;
+- (void)showSheet:(NSWindow*)controllingWindow ;
+
+- (NSArray*)transformList ;
+- (void)validate ;
+
+- (void)setDelegate:(id)client ;
+- (void)deselectAll ;
+
+- (NSMutableArray*)makePlist ;
+- (void)releasePlist ;
+- (void)restoreFromArray:(NSArray*)items ;
+
+//	Lookup
+- (NSArray*)transformForName:(NSString*)name ;
+
+@end

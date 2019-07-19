@@ -1,0 +1,1968 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15G18013" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="1050" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NECOutput">
+            <connections>
+                <outlet property="Z0" destination="773" id="836"/>
+                <outlet property="azimuth3dField" destination="279" id="282"/>
+                <outlet property="azimuth3dStepper" destination="281" id="283"/>
+                <outlet property="azimuthContainer" destination="1215" id="1230"/>
+                <outlet property="azimuthField" destination="64" id="163"/>
+                <outlet property="azimuthStepper" destination="62" id="463"/>
+                <outlet property="azimuthView" destination="45" id="106"/>
+                <outlet property="cardsTable" destination="76" id="83"/>
+                <outlet property="centerButton" destination="681" id="683"/>
+                <outlet property="colorWell0" destination="1137" id="1159"/>
+                <outlet property="colorWell1" destination="1136" id="1160"/>
+                <outlet property="colorWell10" destination="1125" id="1169"/>
+                <outlet property="colorWell11" destination="1124" id="1170"/>
+                <outlet property="colorWell12" destination="1123" id="1171"/>
+                <outlet property="colorWell13" destination="1122" id="1172"/>
+                <outlet property="colorWell14" destination="1156" id="1173"/>
+                <outlet property="colorWell15" destination="1120" id="1174"/>
+                <outlet property="colorWell2" destination="1135" id="1161"/>
+                <outlet property="colorWell3" destination="1134" id="1162"/>
+                <outlet property="colorWell4" destination="1133" id="1163"/>
+                <outlet property="colorWell5" destination="1132" id="1164"/>
+                <outlet property="colorWell6" destination="1131" id="1165"/>
+                <outlet property="colorWell7" destination="1130" id="1166"/>
+                <outlet property="colorWell8" destination="1127" id="1167"/>
+                <outlet property="colorWell9" destination="1126" id="1168"/>
+                <outlet property="colorWindow" destination="1117" id="1157"/>
+                <outlet property="contrast3dSlider" destination="284" id="286"/>
+                <outlet property="currentsMenu" destination="149" id="165"/>
+                <outlet property="drawBackgroundsCheckbox" destination="1291" id="1296"/>
+                <outlet property="drawBordersCheckbox" destination="1288" id="1295"/>
+                <outlet property="drawDistributedLoadsCheckbox" destination="1367" id="1369"/>
+                <outlet property="drawFilenamesCheckbox" destination="1293" id="1297"/>
+                <outlet property="drawRadialsCheckbox" destination="767" id="960"/>
+                <outlet property="elevationContainer" destination="1220" id="1231"/>
+                <outlet property="elevationField" destination="65" id="161"/>
+                <outlet property="elevationStepper" destination="66" id="162"/>
+                <outlet property="elevationView" destination="55" id="107"/>
+                <outlet property="gainPolarizationMatrix" destination="781" id="835"/>
+                <outlet property="gainScaleMatrix" destination="783" id="834"/>
+                <outlet property="geometryContainer" destination="1261" id="1273"/>
+                <outlet property="geometryView" destination="68" id="148"/>
+                <outlet property="lineprinterContainer" destination="1302" id="1336"/>
+                <outlet property="listing" destination="49" id="99"/>
+                <outlet property="modelList" destination="850" id="862"/>
+                <outlet property="optionsDrawer" destination="756" id="804"/>
+                <outlet property="pattern3DView" destination="276" id="278"/>
+                <outlet property="pattern3dContainer" destination="1274" id="1285"/>
+                <outlet property="phongMatrix" destination="287" id="296"/>
+                <outlet property="referenceFlag" destination="847" id="861"/>
+                <outlet property="scalarContainer" destination="1338" id="1361"/>
+                <outlet property="scalarView" destination="910" id="962"/>
+                <outlet property="segmentedMenu" destination="735" id="1250"/>
+                <outlet property="summary" destination="189" id="194"/>
+                <outlet property="summaryAzimuth" destination="269" id="1300"/>
+                <outlet property="summaryBox" destination="186" id="187"/>
+                <outlet property="summaryContainer" destination="1179" id="1235"/>
+                <outlet property="summaryElevation" destination="191" id="1301"/>
+                <outlet property="swrCircle" destination="769" id="837"/>
+                <outlet property="swrContainer" destination="1243" id="1251"/>
+                <outlet property="swrView" destination="52" id="87"/>
+                <outlet property="tabMenu" destination="38" id="104"/>
+                <outlet property="window" destination="5" id="84"/>
+                <outlet property="wireCurrent" destination="1372" id="1385"/>
+                <outlet property="zoomSlider" destination="513" id="515"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="976" userLabel="Toolbar buttons">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="166"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button id="981">
+                    <rect key="frame" x="148" y="58" width="36" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="ColorWheel" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="982">
+                        <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system" size="10"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+        </customView>
+        <window title="cocoaNEC 2.0" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="800" y="113" width="600" height="690"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="600" height="690"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="690"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <tabView controlSize="small" type="noTabsNoBorder" initialItem="108" id="38">
+                        <rect key="frame" x="1" y="11" width="598" height="643"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                        <tabViewItems>
+                            <tabViewItem label="Azimuth" identifier="1" id="43">
+                                <view key="view" id="44">
+                                    <rect key="frame" x="0.0" y="0.0" width="598" height="643"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <customView id="45" customClass="AzimuthView">
+                                            <rect key="frame" x="1" y="66" width="596" height="576"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                            <connections>
+                                                <outlet property="auxPatternView" destination="1175" id="1239"/>
+                                            </connections>
+                                        </customView>
+                                        <customView id="1175" customClass="AuxPatternView">
+                                            <rect key="frame" x="1" y="13" width="596" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        </customView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Elevation" identifier="2" id="53">
+                                <view key="view" id="54">
+                                    <rect key="frame" x="0.0" y="0.0" width="598" height="643"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <customView id="55" customClass="ElevationView">
+                                            <rect key="frame" x="1" y="66" width="596" height="576"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <connections>
+                                                <outlet property="auxPatternView" destination="1177" id="1240"/>
+                                            </connections>
+                                        </customView>
+                                        <customView id="1177" customClass="AuxPatternView">
+                                            <rect key="frame" x="1" y="13" width="596" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        </customView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="3D" identifier="3" id="273">
+                                <view key="view" id="274">
+                                    <rect key="frame" x="0.0" y="0.0" width="598" height="643"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <customView id="276" customClass="Pattern3dView">
+                                            <rect key="frame" x="1" y="90" width="596" height="536"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </customView>
+                                        <textField verticalHuggingPriority="750" id="279">
+                                            <rect key="frame" x="100" y="55" width="38" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="30" drawsBackground="YES" id="707">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="280">
+                                            <rect key="frame" x="47" y="57" width="52" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Azimuth" id="708">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="281">
+                                            <rect key="frame" x="137" y="52" width="19" height="27"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <stepperCell key="cell" continuous="YES" state="on" alignment="left" increment="15" minValue="-720" maxValue="720" doubleValue="45" id="709">
+                                                <font key="font" size="11" name="Verdana"/>
+                                            </stepperCell>
+                                        </stepper>
+                                        <slider verticalHuggingPriority="750" id="284">
+                                            <rect key="frame" x="478" y="58" width="75" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <sliderCell key="cell" controlSize="mini" alignment="left" minValue="0.90000000000000002" maxValue="2.1000000000000001" doubleValue="1.5" tickMarkPosition="above" numberOfTickMarks="7" allowsTickMarkValuesOnly="YES" sliderType="linear" id="710">
+                                                <font key="font" size="12" name="Helvetica"/>
+                                            </sliderCell>
+                                        </slider>
+                                        <textField verticalHuggingPriority="750" id="285">
+                                            <rect key="frame" x="415" y="55" width="52" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Contrast" id="711">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="287">
+                                            <rect key="frame" x="235" y="55" width="126" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="63" height="18"/>
+                                            <size key="intercellSpacing" width="0.0" height="2"/>
+                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="717">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <cells>
+                                                <column>
+                                                    <buttonCell type="radio" title="Shape" imagePosition="left" alignment="left" state="on" inset="2" id="294">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                </column>
+                                                <column>
+                                                    <buttonCell type="radio" title="Gain" imagePosition="left" alignment="left" inset="2" id="295">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                    </buttonCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="SWR" identifier="4" id="50">
+                                <view key="view" id="51">
+                                    <rect key="frame" x="0.0" y="0.0" width="598" height="643"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <customView id="52" customClass="SWRView">
+                                            <rect key="frame" x="1" y="105" width="596" height="538"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <connections>
+                                                <outlet property="auxSWRView" destination="1236" id="1242"/>
+                                                <outlet property="colorWell0" destination="1083" id="1101"/>
+                                                <outlet property="colorWell1" destination="1084" id="1102"/>
+                                                <outlet property="colorWell10" destination="1093" id="1111"/>
+                                                <outlet property="colorWell11" destination="1094" id="1112"/>
+                                                <outlet property="colorWell12" destination="1095" id="1113"/>
+                                                <outlet property="colorWell13" destination="1096" id="1114"/>
+                                                <outlet property="colorWell14" destination="1097" id="1115"/>
+                                                <outlet property="colorWell15" destination="1098" id="1116"/>
+                                                <outlet property="colorWell2" destination="1085" id="1103"/>
+                                                <outlet property="colorWell3" destination="1086" id="1104"/>
+                                                <outlet property="colorWell4" destination="1087" id="1105"/>
+                                                <outlet property="colorWell5" destination="1088" id="1106"/>
+                                                <outlet property="colorWell6" destination="1089" id="1107"/>
+                                                <outlet property="colorWell7" destination="1090" id="1108"/>
+                                                <outlet property="colorWell8" destination="1091" id="1109"/>
+                                                <outlet property="colorWell9" destination="1092" id="1110"/>
+                                                <outlet property="colorWindow" destination="989" id="991"/>
+                                                <outlet property="feedPoint" destination="946" id="954"/>
+                                                <outlet property="interpolateCheckbox" destination="968" id="972"/>
+                                                <outlet property="outputObject" destination="-2" id="963"/>
+                                                <outlet property="showAllCheckbox" destination="970" id="973"/>
+                                                <outlet property="smartInterpolationCheckbox" destination="1362" id="1364"/>
+                                            </connections>
+                                        </customView>
+                                        <textField verticalHuggingPriority="750" id="945">
+                                            <rect key="frame" x="17" y="19" width="64" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="right" title="Feed point:" id="953">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" id="946">
+                                            <rect key="frame" x="84" y="14" width="57" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="1" bezelStyle="rounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" refusesFirstResponder="YES" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="951" id="947">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <menu key="menu" title="OtherViews" id="948">
+                                                    <items>
+                                                        <menuItem title="1" state="on" id="951"/>
+                                                        <menuItem title="2" tag="1" id="949"/>
+                                                        <menuItem title="3" tag="2" id="952"/>
+                                                        <menuItem title="4" tag="3" id="950"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                        </popUpButton>
+                                        <button id="968">
+                                            <rect key="frame" x="155" y="17" width="85" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                            <buttonCell key="cell" type="check" title="Interpolate" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="969">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button id="1362">
+                                            <rect key="frame" x="336" y="17" width="125" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                            <buttonCell key="cell" type="check" title="Smart Interpolation" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1363">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button id="970">
+                                            <rect key="frame" x="251" y="17" width="85" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                            <buttonCell key="cell" type="check" title="Show All" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="971">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                        <customView id="1236" customClass="AuxSWRView">
+                                            <rect key="frame" x="1" y="52" width="596" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <outlet property="outputObject" destination="-2" id="1260"/>
+                                            </connections>
+                                        </customView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Scalar" identifier="5" id="110">
+                                <view key="view" id="111">
+                                    <rect key="frame" x="0.0" y="0.0" width="598" height="643"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="909">
+                                            <rect key="frame" x="0.0" y="127" width="598" height="514"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="fvT-Tf-mjW">
+                                                <rect key="frame" x="1" y="1" width="585" height="512"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <customView id="910" customClass="ScalarView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="589" height="2012"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <outlet property="auxScalarView" destination="913" id="1241"/>
+                                                            <outlet property="feedPoint" destination="933" id="944"/>
+                                                            <outlet property="interpolateCheckbox" destination="965" id="974"/>
+                                                            <outlet property="outputObject" destination="-2" id="964"/>
+                                                            <outlet property="plotScaleMenu" destination="914" id="988"/>
+                                                            <outlet property="plotTypeMenu" destination="925" id="987"/>
+                                                        </connections>
+                                                    </customView>
+                                                </subviews>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="911">
+                                                <rect key="frame" x="-100" y="-100" width="583" height="15"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="912">
+                                                <rect key="frame" x="586" y="1" width="11" height="512"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
+                                        <customView id="913" customClass="AuxScalarView">
+                                            <rect key="frame" x="0.0" y="59" width="598" height="68"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        </customView>
+                                        <popUpButton verticalHuggingPriority="750" id="925">
+                                            <rect key="frame" x="32" y="20" width="109" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="R-X" bezelStyle="rounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" refusesFirstResponder="YES" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="930" id="926">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <menu key="menu" title="OtherViews" id="927">
+                                                    <items>
+                                                        <menuItem title="R-X" state="on" id="930"/>
+                                                        <menuItem title="|Z|" tag="1" id="928"/>
+                                                        <menuItem title="VSWR" tag="2" id="931"/>
+                                                        <menuItem title="Return Loss" tag="3" id="929"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                        </popUpButton>
+                                        <button id="965">
+                                            <rect key="frame" x="314" y="23" width="85" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Interpolate" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="966">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                        <box autoresizesSubviews="NO" title="Box" borderType="none" titlePosition="noTitle" id="1209">
+                                            <rect key="frame" x="164" y="9" width="135" height="42"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view key="contentView" id="c4E-GK-Lag">
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="42"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <popUpButton verticalHuggingPriority="750" id="933">
+                                                        <rect key="frame" x="72" y="10" width="57" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                                        <popUpButtonCell key="cell" type="push" title="1" bezelStyle="rounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" refusesFirstResponder="YES" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="937" id="934">
+                                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <menu key="menu" title="OtherViews" id="935">
+                                                                <items>
+                                                                    <menuItem title="1" state="on" id="937"/>
+                                                                    <menuItem title="2" tag="1" id="939"/>
+                                                                    <menuItem title="3" tag="2" id="936"/>
+                                                                    <menuItem title="4" tag="3" id="938"/>
+                                                                </items>
+                                                            </menu>
+                                                        </popUpButtonCell>
+                                                    </popUpButton>
+                                                    <textField verticalHuggingPriority="750" id="940">
+                                                        <rect key="frame" x="7" y="15" width="64" height="14"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Feed point:" id="941">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </subviews>
+                                            </view>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </box>
+                                        <box autoresizesSubviews="NO" title="Box" borderType="none" titlePosition="noTitle" id="1210">
+                                            <rect key="frame" x="432" y="9" width="143" height="42"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            <view key="contentView" id="xBk-4e-bQU">
+                                                <rect key="frame" x="0.0" y="0.0" width="143" height="42"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField verticalHuggingPriority="750" id="915">
+                                                        <rect key="frame" x="5" y="15" width="42" height="14"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Scale:" id="916">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <popUpButton verticalHuggingPriority="750" id="914">
+                                                        <rect key="frame" x="47" y="10" width="90" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                        <popUpButtonCell key="cell" type="push" title="x32" bezelStyle="rounded" alignment="center" controlSize="small" lineBreakMode="truncatingTail" refusesFirstResponder="YES" state="on" borderStyle="borderAndBezel" tag="1" imageScaling="proportionallyDown" inset="2" selectedItem="924" id="917">
+                                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <menu key="menu" title="OtherViews" id="918">
+                                                                <items>
+                                                                    <menuItem title="x1" tag="32" id="921"/>
+                                                                    <menuItem title="x2" tag="16" id="919"/>
+                                                                    <menuItem title="x4" tag="8" id="922"/>
+                                                                    <menuItem title="x8" tag="4" id="920"/>
+                                                                    <menuItem title="x16" tag="2" id="923"/>
+                                                                    <menuItem title="x32" state="on" tag="1" id="924"/>
+                                                                </items>
+                                                            </menu>
+                                                        </popUpButtonCell>
+                                                    </popUpButton>
+                                                </subviews>
+                                            </view>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </box>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Geometry" identifier="6" id="60">
+                                <view key="view" id="61">
+                                    <rect key="frame" x="0.0" y="0.0" width="598" height="643"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <customView id="68" customClass="GeometryView">
+                                            <rect key="frame" x="1" y="58" width="596" height="585"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <box autoresizesSubviews="NO" title="Box" borderType="none" titlePosition="noTitle" id="1208">
+                                                    <rect key="frame" x="4" y="457" width="60" height="121"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" id="ens-eb-PtV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="121"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textField verticalHuggingPriority="750" id="555" customClass="NonprintingTextField">
+                                                                <rect key="frame" x="15" y="7" width="28" height="17"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="1x" id="693">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <slider horizontalHuggingPriority="750" id="513" customClass="NonprintingSlider">
+                                                                <rect key="frame" x="24" y="24" width="17" height="68"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" alignment="left" maxValue="4" doubleValue="0.035087719298245723" tickMarkPosition="right" numberOfTickMarks="7" sliderType="linear" id="692">
+                                                                    <font key="font" metaFont="miniSystem"/>
+                                                                </sliderCell>
+                                                            </slider>
+                                                            <textField verticalHuggingPriority="750" id="557" customClass="NonprintingTextField">
+                                                                <rect key="frame" x="15" y="94" width="28" height="17"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="16x" id="694">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </subviews>
+                                                    </view>
+                                                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </box>
+                                            </subviews>
+                                        </customView>
+                                        <box autoresizesSubviews="NO" title="Box" borderType="none" titlePosition="noTitle" id="1206">
+                                            <rect key="frame" x="11" y="3" width="340" height="49"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view key="contentView" id="PCU-XY-cmm">
+                                                <rect key="frame" x="0.0" y="0.0" width="340" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField verticalHuggingPriority="750" id="67">
+                                                        <rect key="frame" x="4" y="18" width="60" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Elevation" id="691">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField verticalHuggingPriority="750" id="65">
+                                                        <rect key="frame" x="66" y="15" width="35" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="45" drawsBackground="YES" id="689">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="66">
+                                                        <rect key="frame" x="100" y="12" width="19" height="27"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <stepperCell key="cell" continuous="YES" alignment="left" increment="5" minValue="-90" maxValue="90" doubleValue="45" id="690"/>
+                                                    </stepper>
+                                                    <textField verticalHuggingPriority="750" id="63">
+                                                        <rect key="frame" x="127" y="18" width="52" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Azimuth" id="687">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField verticalHuggingPriority="750" id="64">
+                                                        <rect key="frame" x="181" y="15" width="38" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="45" drawsBackground="YES" id="688">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="62">
+                                                        <rect key="frame" x="217" y="12" width="19" height="27"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <stepperCell key="cell" continuous="YES" alignment="left" increment="5" minValue="-720" maxValue="720" doubleValue="45" id="686">
+                                                            <font key="font" size="11" name="Verdana"/>
+                                                        </stepperCell>
+                                                    </stepper>
+                                                    <button verticalHuggingPriority="750" id="681">
+                                                        <rect key="frame" x="261" y="16" width="71" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <buttonCell key="cell" type="squareTextured" title="Re-center" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="697">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </box>
+                                        <box autoresizesSubviews="NO" title="Box" borderType="none" titlePosition="noTitle" id="1207">
+                                            <rect key="frame" x="381" y="3" width="212" height="47"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            <view key="contentView" id="I4P-Qu-wtL">
+                                                <rect key="frame" x="0.0" y="0.0" width="212" height="47"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField verticalHuggingPriority="750" id="155">
+                                                        <rect key="frame" x="6" y="18" width="61" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Currents:" id="696">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <popUpButton verticalHuggingPriority="750" id="149">
+                                                        <rect key="frame" x="64" y="14" width="133" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                        <popUpButtonCell key="cell" type="push" title="Magnitude" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="2" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="337" id="695">
+                                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <menu key="menu" title="OtherViews" id="150">
+                                                                <items>
+                                                                    <menuItem title="None" id="152"/>
+                                                                    <menuItem title="Scaled Magnitude" tag="1" id="151"/>
+                                                                    <menuItem title="Magnitude" state="on" tag="2" id="337">
+                                                                        <attributedString key="attributedTitle"/>
+                                                                    </menuItem>
+                                                                    <menuItem title="Mag. &amp; Phase" tag="3" id="153"/>
+                                                                    <menuItem title="Mag. &amp; Rel. Phase" tag="4" id="154">
+                                                                        <attributedString key="attributedTitle"/>
+                                                                    </menuItem>
+                                                                    <menuItem title="Current Gradient" tag="5" id="379">
+                                                                        <attributedString key="attributedTitle"/>
+                                                                    </menuItem>
+                                                                </items>
+                                                            </menu>
+                                                        </popUpButtonCell>
+                                                    </popUpButton>
+                                                </subviews>
+                                            </view>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </box>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Summary" identifier="7" id="108">
+                                <view key="view" id="109">
+                                    <rect key="frame" x="0.0" y="0.0" width="598" height="643"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <customView id="186">
+                                            <rect key="frame" x="1" y="13" width="596" height="628"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <customView id="269" customClass="AzimuthView">
+                                                    <rect key="frame" x="0.0" y="312" width="298" height="313"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                </customView>
+                                                <customView id="191" customClass="ElevationView">
+                                                    <rect key="frame" x="298" y="312" width="298" height="313"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                </customView>
+                                                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="188">
+                                                    <rect key="frame" x="0.0" y="0.0" width="596" height="311"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <clipView key="contentView" id="dcx-mM-nDF">
+                                                        <rect key="frame" x="1" y="1" width="583" height="309"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="189">
+                                                                <rect key="frame" x="0.0" y="2" width="587" height="309"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <size key="minSize" width="583" height="309"/>
+                                                                <size key="maxSize" width="596" height="10000000"/>
+                                                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="minSize" width="583" height="309"/>
+                                                                <size key="maxSize" width="596" height="10000000"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </clipView>
+                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="YES" id="725">
+                                                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="724">
+                                                        <rect key="frame" x="584" y="1" width="11" height="309"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                </scrollView>
+                                            </subviews>
+                                        </customView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Cards" identifier="8" id="69">
+                                <view key="view" id="70">
+                                    <rect key="frame" x="0.0" y="0.0" width="598" height="643"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <scrollView horizontalLineScroll="16" horizontalPageScroll="10" verticalLineScroll="16" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="75">
+                                            <rect key="frame" x="1" y="8" width="596" height="631"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <clipView key="contentView" id="yiu-t8-ffD">
+                                                <rect key="frame" x="1" y="1" width="583" height="629"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="14" id="76" customClass="NonrespondingTableView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1051" height="16"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <size key="intercellSpacing" width="3" height="2"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <tableViewGridLines key="gridStyleMask" vertical="YES" horizontal="YES"/>
+                                                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                        <tableColumns>
+                                                            <tableColumn editable="NO" width="45" minWidth="30" maxWidth="1000" id="77">
+                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </tableHeaderCell>
+                                                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="center" title="Text Cell" id="718">
+                                                                    <font key="font" size="10" name="Monaco"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <tableColumnResizingMask key="resizingMask" userResizable="YES"/>
+                                                            </tableColumn>
+                                                            <tableColumn editable="NO" width="1000" minWidth="1000" maxWidth="10000" id="79">
+                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                </tableHeaderCell>
+                                                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="719">
+                                                                    <font key="font" size="10" name="Monaco"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </tableColumn>
+                                                        </tableColumns>
+                                                    </tableView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="small" horizontal="YES" id="723">
+                                                <rect key="frame" x="-100" y="-100" width="583" height="11"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="722">
+                                                <rect key="frame" x="584" y="1" width="11" height="629"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="NEC2 Output" identifier="9" id="46">
+                                <view key="view" id="47">
+                                    <rect key="frame" x="0.0" y="0.0" width="598" height="643"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="48">
+                                            <rect key="frame" x="1" y="7" width="596" height="632"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <clipView key="contentView" id="vvY-Lh-ONj">
+                                                <rect key="frame" x="1" y="1" width="583" height="630"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <textView editable="NO" importsGraphics="NO" findStyle="panel" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="49">
+                                                        <rect key="frame" x="0.0" y="7" width="583" height="630"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="minSize" width="579" height="630"/>
+                                                        <size key="maxSize" width="598" height="10000000"/>
+                                                        <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <size key="minSize" width="579" height="630"/>
+                                                        <size key="maxSize" width="598" height="10000000"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="YES" id="721">
+                                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="720">
+                                                <rect key="frame" x="584" y="1" width="11" height="630"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                    <segmentedControl focusRingType="none" verticalHuggingPriority="750" id="735">
+                        <rect key="frame" x="12" y="661" width="576" height="20"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <segmentedCell key="cell" controlSize="small" borderStyle="border" focusRingType="none" alignment="left" style="rounded" trackingMode="selectOne" id="736">
+                            <font key="font" metaFont="smallSystem"/>
+                            <segments>
+                                <segment label="Azimuth" width="68"/>
+                                <segment label="Elevation" width="68" tag="1"/>
+                                <segment label="3D" width="32"/>
+                                <segment label="Smith Chart"/>
+                                <segment label="Scalar"/>
+                                <segment label="Geometry"/>
+                                <segment label="Summary" selected="YES"/>
+                                <segment label="Cards"/>
+                                <segment label="NEC2 Output"/>
+                            </segments>
+                        </segmentedCell>
+                        <connections>
+                            <action selector="takeSelectedTabViewItemFromSender:" target="38" id="747"/>
+                        </connections>
+                    </segmentedControl>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="274A3739-5BCE-4EDD-87A4-0214999FC313" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconOnly" sizeMode="regular" id="839">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="840">
+                        <connections>
+                            <action selector="openColorOptions:" target="-2" id="975"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="841"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSeparatorItem" id="842"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="844"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="845"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarCustomizeToolbarItem" id="846"/>
+                    <toolbarItem implicitItemIdentifier="97696F4C-55A3-47CF-AE34-00D4C2BBA55E" label="Ref" paletteLabel="Ref" id="849">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="10" height="10"/>
+                        <size key="maxSize" width="10" height="10"/>
+                        <textField key="view" hidden="YES" verticalHuggingPriority="750" id="847">
+                            <rect key="frame" x="8" y="14" width="10" height="10"/>
+                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="848">
+                                <font key="font" metaFont="system" size="2"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                            </textFieldCell>
+                        </textField>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="06962318-E86C-4BD8-B374-AEF9F90651BD" label="Empty" paletteLabel="Empty" id="865">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="5" height="10"/>
+                        <size key="maxSize" width="10" height="10"/>
+                        <textField key="view" hidden="YES" verticalHuggingPriority="750" id="866">
+                            <rect key="frame" x="16" y="14" width="10" height="10"/>
+                            <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" id="867">
+                                <font key="font" metaFont="system" size="2"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                            </textFieldCell>
+                        </textField>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="CBEF0AAA-3D32-4726-A020-37F0DB69916B" label="Model List" paletteLabel="Model List" id="852">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="300" height="22"/>
+                        <size key="maxSize" width="583" height="22"/>
+                        <comboBox key="view" verticalHuggingPriority="750" id="850">
+                            <rect key="frame" x="0.0" y="14" width="368" height="22"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <comboBoxCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="851">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </comboBoxCell>
+                        </comboBox>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="2C7E978E-08C1-4165-83C7-F7AC49D976CB" label="Custom View" paletteLabel="Custom View" id="856">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="20" height="20"/>
+                        <size key="maxSize" width="20" height="20"/>
+                        <button key="view" verticalHuggingPriority="750" id="853">
+                            <rect key="frame" x="28" y="14" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <buttonCell key="cell" type="smallSquare" title="-" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" controlSize="small" borderStyle="border" inset="2" id="854">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="smallSystem"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="removeContext:" target="-2" id="855"/>
+                            </connections>
+                        </button>
+                        <connections>
+                            <action selector="removeContext:" target="-2" id="863"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="D2819813-EF3D-460B-96C2-9FAE40F55A46" label="Custom View" paletteLabel="Custom View" image="gear" id="901">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="32" height="34"/>
+                        <size key="maxSize" width="32" height="34"/>
+                        <button key="view" id="899">
+                            <rect key="frame" x="22" y="14" width="32" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="gear" imagePosition="only" alignment="center" alternateImage="gear" controlSize="mini" imageScaling="proportionallyDown" inset="2" id="900">
+                                <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="miniSystem"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="openOptions:" target="-2" id="902"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="0D973DE8-34AA-43C8-BF1C-93BFFF8404D0" label="Custom View" paletteLabel="Custom View" image="print" id="907">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="32" height="34"/>
+                        <size key="maxSize" width="32" height="34"/>
+                        <button key="view" id="905">
+                            <rect key="frame" x="22" y="14" width="32" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="print" imagePosition="only" alignment="center" alternateImage="print" controlSize="mini" imageScaling="proportionallyDown" inset="2" id="906">
+                                <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="miniSystem"/>
+                            </buttonCell>
+                        </button>
+                        <connections>
+                            <action selector="printView:" target="-2" id="1334"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="0A3702D5-B3BE-4B03-937B-A5F55A1FC13C" label="Custom View" paletteLabel="Custom View" image="ColorWheel" id="985">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="36" height="38"/>
+                        <size key="maxSize" width="36" height="38"/>
+                        <button key="view" id="983">
+                            <rect key="frame" x="20" y="14" width="36" height="38"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="ColorWheel" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="984">
+                                <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system" size="10"/>
+                            </buttonCell>
+                        </button>
+                        <connections>
+                            <action selector="openColorOptions:" target="-2" id="986"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="865"/>
+                    <toolbarItem reference="849"/>
+                    <toolbarItem reference="852"/>
+                    <toolbarItem reference="856"/>
+                    <toolbarItem reference="845"/>
+                    <toolbarItem reference="907"/>
+                    <toolbarItem reference="985"/>
+                    <toolbarItem reference="901"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <outlet property="initialFirstResponder" destination="557" id="640"/>
+            </connections>
+        </window>
+        <customView id="755" userLabel="Options Drawer Content View">
+            <rect key="frame" x="0.0" y="0.0" width="346" height="603"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" id="761">
+                    <rect key="frame" x="21" y="309" width="156" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Smith Chart" id="801">
+                        <font key="font" size="10" name="Verdana-BoldItalic"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="762">
+                    <rect key="frame" x="16" y="564" width="120" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Radiation Patterns" id="800">
+                        <font key="font" size="10" name="Verdana-BoldItalic"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="763">
+                    <rect key="frame" x="19" y="227" width="75" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Geometry" id="799">
+                        <font key="font" size="10" name="Verdana-BoldItalic"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="764">
+                    <rect key="frame" x="4" y="339" width="335" height="220"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView" id="4b5-Vt-vcy">
+                        <rect key="frame" x="1" y="1" width="333" height="218"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" id="784">
+                                <rect key="frame" x="13" y="183" width="98" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Scale Constant" id="785">
+                                    <font key="font" size="10" name="Verdana-Bold"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" id="832">
+                                <rect key="frame" x="13" y="165" width="77" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title=" (per 2 dB)" id="833">
+                                    <font key="font" size="10" name="Verdana-Bold"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="781">
+                                <rect key="frame" x="174" y="20" width="137" height="156"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                <size key="cellSize" width="137" height="18"/>
+                                <size key="intercellSpacing" width="4" height="5"/>
+                                <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" controlSize="small" inset="2" id="796">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                                <cells>
+                                    <column>
+                                        <buttonCell type="radio" title="Total" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" tag="2" inset="2" id="793">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="Vertical" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" refusesFirstResponder="YES" inset="2" id="794">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="Horizontal" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="1" inset="2" id="795">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="Horizontal + Vertical" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="5" inset="2" id="798">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="Left Hand Circular" imagePosition="left" alignment="left" controlSize="small" tag="3" inset="2" id="797">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="Right Hand Circular" imagePosition="left" alignment="left" controlSize="small" tag="4" inset="2" id="791">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="RHCP+LHCP" imagePosition="left" alignment="left" controlSize="small" tag="6" inset="2" id="792">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                    </column>
+                                </cells>
+                            </matrix>
+                            <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="783">
+                                <rect key="frame" x="19" y="92" width="127" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                <size key="cellSize" width="127" height="21"/>
+                                <size key="intercellSpacing" width="4" height="1"/>
+                                <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" controlSize="small" inset="2" id="789">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                                <cells>
+                                    <column>
+                                        <buttonCell type="radio" title="0.80" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="786">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="0.89 (ARRL default)" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" tag="1" inset="2" id="787">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="0.92" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="2" inset="2" id="788">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="smallSystem"/>
+                                        </buttonCell>
+                                    </column>
+                                </cells>
+                            </matrix>
+                            <textField verticalHuggingPriority="750" id="782">
+                                <rect key="frame" x="167" y="184" width="85" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Polarization" id="790">
+                                    <font key="font" size="10" name="Verdana-Bold"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+                <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="765">
+                    <rect key="frame" x="4" y="257" width="335" height="52"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView" id="QSz-Xw-JIu">
+                        <rect key="frame" x="1" y="1" width="333" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" id="774">
+                                <rect key="frame" x="6" y="17" width="83" height="14"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Reference Z₀" id="775">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" id="773">
+                                <rect key="frame" x="93" y="15" width="43" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="50.0" drawsBackground="YES" id="776">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" id="772">
+                                <rect key="frame" x="142" y="17" width="23" height="14"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Ω" id="777">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" id="771">
+                                <rect key="frame" x="180" y="14" width="68" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="SWR Circle" id="778">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" id="769">
+                                <rect key="frame" x="252" y="15" width="37" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="2.0" drawsBackground="YES" id="780">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" id="770">
+                                <rect key="frame" x="292" y="14" width="23" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title=": 1" id="779">
+                                    <font key="font" metaFont="smallSystemBold"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+                <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="766">
+                    <rect key="frame" x="4" y="149" width="196" height="73"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView" id="BYz-9K-cl8">
+                        <rect key="frame" x="1" y="1" width="194" height="71"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button id="767">
+                                <rect key="frame" x="25" y="41" width="91" height="18"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <buttonCell key="cell" type="check" title="Draw Radials" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="768">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                            </button>
+                            <button id="1367">
+                                <rect key="frame" x="25" y="15" width="148" height="18"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <buttonCell key="cell" type="check" title="Draw Distributed Loads" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1368">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+                <textField verticalHuggingPriority="750" id="1286">
+                    <rect key="frame" x="19" y="113" width="75" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Printing" id="1290">
+                        <font key="font" size="10" name="Verdana-BoldItalic"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="1287">
+                    <rect key="frame" x="4" y="12" width="218" height="97"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView" id="Hly-4t-1Es">
+                        <rect key="frame" x="1" y="1" width="216" height="95"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button id="1288">
+                                <rect key="frame" x="25" y="63" width="94" height="18"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <buttonCell key="cell" type="check" title="Draw Borders" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="1289">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                            </button>
+                            <button id="1291">
+                                <rect key="frame" x="25" y="38" width="122" height="18"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <buttonCell key="cell" type="check" title="Draw Backgrounds" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="1292">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                            </button>
+                            <button id="1293">
+                                <rect key="frame" x="25" y="12" width="169" height="18"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <buttonCell key="cell" type="check" title="Draw filename/date footers" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="1294">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+            </subviews>
+        </customView>
+        <drawer trailingOffset="15" id="756" userLabel="Options Drawer">
+            <size key="contentSize" width="343" height="510"/>
+            <size key="maxContentSize" width="343" height="510"/>
+            <connections>
+                <outlet property="contentView" destination="755" id="817"/>
+                <outlet property="parentWindow" destination="5" id="760"/>
+            </connections>
+        </drawer>
+        <customView id="880" userLabel="Custom Buttons">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="331"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button id="889">
+                    <rect key="frame" x="80" y="195" width="32" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="gear" imagePosition="only" alignment="center" alternateImage="gear" controlSize="mini" imageScaling="proportionallyDown" inset="2" id="890">
+                        <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="miniSystem"/>
+                    </buttonCell>
+                </button>
+                <button id="903">
+                    <rect key="frame" x="80" y="147" width="32" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="print" imagePosition="only" alignment="center" alternateImage="print" controlSize="mini" imageScaling="proportionallyDown" inset="2" id="904">
+                        <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="miniSystem"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+        </customView>
+        <window title="Smith Chart Colors" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="989" userLabel="SWR Colors">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="288" width="243" height="222"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="990">
+                <rect key="frame" x="0.0" y="0.0" width="243" height="222"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box autoresizesSubviews="NO" title="Colors" boxType="oldStyle" borderType="none" titlePosition="noTitle" id="1036">
+                        <rect key="frame" x="17" y="11" width="199" height="201"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" id="feq-2m-1wW">
+                            <rect key="frame" x="0.0" y="0.0" width="199" height="201"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <matrix verticalHuggingPriority="750" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" id="1008">
+                                    <rect key="frame" x="12" y="17" width="25" height="168"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="cellSize" width="25" height="14"/>
+                                    <size key="intercellSpacing" width="2" height="8"/>
+                                    <textFieldCell key="prototype" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="1" id="1010">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <cells>
+                                        <column>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="1" id="1007">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="2" id="1015">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="3" id="1011">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="4" id="1017">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="5" id="1012">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="6" id="1016">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="7" id="1013">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="8" id="1014">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </column>
+                                    </cells>
+                                </matrix>
+                                <matrix verticalHuggingPriority="750" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" id="1026">
+                                    <rect key="frame" x="105" y="17" width="25" height="168"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="cellSize" width="25" height="14"/>
+                                    <size key="intercellSpacing" width="2" height="8"/>
+                                    <textFieldCell key="prototype" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="1" id="1035">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <cells>
+                                        <column>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="9" id="1034">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="10" id="1029">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="11" id="1033">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="right" title="12" id="1027">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="13" id="1032">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="14" id="1028">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="15" id="1031">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="16" id="1030">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </column>
+                                    </cells>
+                                </matrix>
+                                <colorWell canDrawConcurrently="YES" focusRingType="none" id="1083">
+                                    <rect key="frame" x="45" y="170" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="1" id="1084">
+                                    <rect key="frame" x="45" y="148" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="2" id="1085">
+                                    <rect key="frame" x="45" y="126" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="3" id="1086">
+                                    <rect key="frame" x="45" y="104" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="4" id="1087">
+                                    <rect key="frame" x="45" y="82" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="5" id="1088">
+                                    <rect key="frame" x="45" y="60" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="6" id="1089">
+                                    <rect key="frame" x="45" y="38" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="7" id="1090">
+                                    <rect key="frame" x="45" y="16" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="8" id="1091">
+                                    <rect key="frame" x="138" y="170" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="9" id="1092">
+                                    <rect key="frame" x="138" y="148" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="10" id="1093">
+                                    <rect key="frame" x="138" y="126" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="11" id="1094">
+                                    <rect key="frame" x="138" y="104" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="12" id="1095">
+                                    <rect key="frame" x="138" y="82" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="13" id="1096">
+                                    <rect key="frame" x="138" y="60" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="14" id="1097">
+                                    <rect key="frame" x="138" y="38" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="15" id="1098">
+                                    <rect key="frame" x="138" y="16" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                </subviews>
+            </view>
+        </window>
+        <window title="Radiation Pattern Colors" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="1117" userLabel="Pattern Colors">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="288" width="266" height="222"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="1118">
+                <rect key="frame" x="0.0" y="0.0" width="266" height="222"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box autoresizesSubviews="NO" title="Colors" boxType="oldStyle" borderType="none" titlePosition="noTitle" id="1119">
+                        <rect key="frame" x="22" y="11" width="199" height="201"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" id="IDg-yr-ruN">
+                            <rect key="frame" x="0.0" y="0.0" width="199" height="201"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <matrix verticalHuggingPriority="750" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" id="1129">
+                                    <rect key="frame" x="12" y="17" width="25" height="168"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="cellSize" width="25" height="14"/>
+                                    <size key="intercellSpacing" width="2" height="8"/>
+                                    <textFieldCell key="prototype" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="1" id="1138">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <cells>
+                                        <column>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="1" id="1139">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="2" id="1144">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="3" id="1140">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="4" id="1146">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="5" id="1141">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="6" id="1145">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="7" id="1142">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="8" id="1143">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </column>
+                                    </cells>
+                                </matrix>
+                                <matrix verticalHuggingPriority="750" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" id="1128">
+                                    <rect key="frame" x="105" y="17" width="25" height="168"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="cellSize" width="25" height="14"/>
+                                    <size key="intercellSpacing" width="2" height="8"/>
+                                    <textFieldCell key="prototype" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="1" id="1155">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <cells>
+                                        <column>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="9" id="1154">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="10" id="1149">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="11" id="1153">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="right" title="12" id="1147">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="13" id="1152">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="14" id="1148">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="15" id="1151">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <textFieldCell controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="16" id="1150">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </column>
+                                    </cells>
+                                </matrix>
+                                <colorWell canDrawConcurrently="YES" focusRingType="none" id="1137">
+                                    <rect key="frame" x="45" y="170" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="1" id="1136">
+                                    <rect key="frame" x="45" y="148" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.0" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="2" id="1135">
+                                    <rect key="frame" x="45" y="126" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.90196078430000004" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="3" id="1134">
+                                    <rect key="frame" x="45" y="104" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.50196078430000002" green="0.50196078430000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="4" id="1133">
+                                    <rect key="frame" x="45" y="82" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="5" id="1132">
+                                    <rect key="frame" x="45" y="60" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="6" id="1131">
+                                    <rect key="frame" x="45" y="38" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="1" green="0.47080291969999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="7" id="1130">
+                                    <rect key="frame" x="45" y="16" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.39781021900000002" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="8" id="1127">
+                                    <rect key="frame" x="138" y="170" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="1" green="0.79927007299999997" blue="0.50729927009999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="9" id="1126">
+                                    <rect key="frame" x="138" y="148" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.1788321168" green="0.4854014599" blue="0.95255474449999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="10" id="1125">
+                                    <rect key="frame" x="138" y="126" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.58029197079999995" green="0.41240875910000002" blue="0.52919708030000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="11" id="1124">
+                                    <rect key="frame" x="138" y="104" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.73357664229999997" green="0.0" blue="0.30291970800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="12" id="1123">
+                                    <rect key="frame" x="138" y="82" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.05813049898" green="0.80656934309999995" blue="0.5656934307" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="13" id="1122">
+                                    <rect key="frame" x="138" y="60" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.76277372259999998" green="0.70437956199999996" blue="0.12773722630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell tag="13" id="1156">
+                                    <rect key="frame" x="138" y="38" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.23722627739999999" green="0.4051094891" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                                <colorWell focusRingType="none" tag="15" id="1120">
+                                    <rect key="frame" x="138" y="16" width="40" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="color" red="0.17153284669999999" green="0.77007299269999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </colorWell>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                </subviews>
+            </view>
+        </window>
+        <customView id="1179" userLabel="summary container" customClass="SummaryContainer">
+            <rect key="frame" x="0.0" y="0.0" width="596" height="628"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+            <subviews>
+                <customView id="1181" customClass="AzimuthView">
+                    <rect key="frame" x="0.0" y="312" width="298" height="313"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                </customView>
+                <customView id="1182" customClass="ElevationView">
+                    <rect key="frame" x="298" y="312" width="298" height="313"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                </customView>
+                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="1186">
+                    <rect key="frame" x="0.0" y="0.0" width="596" height="311"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <clipView key="contentView" id="euQ-MN-E6F">
+                        <rect key="frame" x="0.0" y="0.0" width="596" height="311"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView importsGraphics="NO" verticallyResizable="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1189">
+                                <rect key="frame" x="0.0" y="0.0" width="596" height="311"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="596" height="311"/>
+                                <size key="maxSize" width="596" height="311"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="596" height="311"/>
+                                <size key="maxSize" width="596" height="311"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1188">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1187">
+                        <rect key="frame" x="-100" y="-100" width="15" height="135"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <connections>
+                <outlet property="azimuth" destination="1181" id="1232"/>
+                <outlet property="elevation" destination="1182" id="1233"/>
+                <outlet property="textView" destination="1189" id="1234"/>
+            </connections>
+        </customView>
+        <customView id="1215" userLabel="azimuth container" customClass="PatternContainer">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="642"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <customView id="1216" customClass="AzimuthView">
+                    <rect key="frame" x="0.0" y="94" width="600" height="548"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <connections>
+                        <outlet property="auxPatternView" destination="1217" id="1237"/>
+                    </connections>
+                </customView>
+                <customView id="1217" customClass="AuxPatternView">
+                    <rect key="frame" x="0.0" y="41" width="600" height="52"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+                <customView id="1256" customClass="Footer">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+            </subviews>
+            <connections>
+                <outlet property="footer" destination="1256" id="1257"/>
+                <outlet property="patternView" destination="1216" id="1229"/>
+            </connections>
+        </customView>
+        <customView id="1220" userLabel="elevation container" customClass="PatternContainer">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="642"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <customView id="1222" customClass="ElevationView">
+                    <rect key="frame" x="0.0" y="94" width="600" height="548"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <connections>
+                        <outlet property="auxPatternView" destination="1221" id="1238"/>
+                    </connections>
+                </customView>
+                <customView id="1221" customClass="AuxPatternView">
+                    <rect key="frame" x="0.0" y="41" width="600" height="52"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+                <customView id="1254" customClass="Footer">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+            </subviews>
+            <connections>
+                <outlet property="footer" destination="1254" id="1255"/>
+                <outlet property="patternView" destination="1222" id="1228"/>
+            </connections>
+        </customView>
+        <customView id="1243" userLabel="SWR container" customClass="SWRContainer">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="642"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <customView id="1244" customClass="SWRView">
+                    <rect key="frame" x="0.0" y="94" width="600" height="548"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <connections>
+                        <outlet property="auxSWRView" destination="1245" id="1248"/>
+                        <outlet property="outputObject" destination="-2" id="1258"/>
+                    </connections>
+                </customView>
+                <customView id="1245" customClass="AuxSWRView">
+                    <rect key="frame" x="0.0" y="41" width="600" height="52"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <outlet property="outputObject" destination="-2" id="1259"/>
+                    </connections>
+                </customView>
+                <customView id="1252" customClass="Footer">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+            </subviews>
+            <connections>
+                <outlet property="footer" destination="1252" id="1253"/>
+                <outlet property="swrView" destination="1244" id="1249"/>
+            </connections>
+        </customView>
+        <customView id="1261" userLabel="geometry container" customClass="GeometryContainer">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="641"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView id="1262" customClass="GeometryView">
+                    <rect key="frame" x="0.0" y="41" width="600" height="600"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+                <customView id="1271" customClass="Footer">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+            </subviews>
+            <connections>
+                <outlet property="footer" destination="1271" id="1272"/>
+                <outlet property="geometryView" destination="1262" id="1270"/>
+            </connections>
+        </customView>
+        <customView id="1274" userLabel="3d container" customClass="Pattern3dContainer">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="642"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <customView id="1277" customClass="Pattern3dView">
+                    <rect key="frame" x="0.0" y="94" width="600" height="548"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                </customView>
+                <customView id="1276" customClass="Aux3dView">
+                    <rect key="frame" x="0.0" y="41" width="600" height="52"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+                <customView id="1275" customClass="Footer">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+            </subviews>
+            <connections>
+                <outlet property="auxView" destination="1276" id="1284"/>
+                <outlet property="footer" destination="1275" id="1283"/>
+                <outlet property="view" destination="1277" id="1282"/>
+            </connections>
+        </customView>
+        <customView id="1302" userLabel="Lineprinter container" customClass="LineprinterContainer">
+            <rect key="frame" x="0.0" y="0.0" width="770" height="545"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="1329">
+                    <rect key="frame" x="0.0" y="14" width="770" height="531"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <clipView key="contentView" id="Syr-8z-9AA">
+                        <rect key="frame" x="1" y="1" width="768" height="529"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1332">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="529"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="768" height="529"/>
+                                <size key="maxSize" width="977" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="768" height="529"/>
+                                <size key="maxSize" width="977" height="10000000"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1331">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="1330">
+                        <rect key="frame" x="-100" y="-100" width="15" height="529"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <connections>
+                <outlet property="textView" destination="1332" id="1337"/>
+            </connections>
+        </customView>
+        <customView id="1338" userLabel="scalar container" customClass="ScalarContainer">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="642"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <customView id="1340" customClass="AuxScalarView">
+                    <rect key="frame" x="0.0" y="41" width="600" height="87"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+                <customView id="1339" customClass="Footer">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </customView>
+                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="1345">
+                    <rect key="frame" x="0.0" y="128" width="598" height="514"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="IJC-jN-Lxf">
+                        <rect key="frame" x="1" y="1" width="596" height="512"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView id="1348" customClass="PrintScalarView">
+                                <rect key="frame" x="0.0" y="0.0" width="596" height="2012"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="auxScalarView" destination="1340" id="1356"/>
+                                    <outlet property="feedPoint" destination="933" id="1357"/>
+                                    <outlet property="interpolateCheckbox" destination="965" id="1358"/>
+                                    <outlet property="outputObject" destination="-2" id="1353"/>
+                                    <outlet property="plotScaleMenu" destination="914" id="1359"/>
+                                    <outlet property="plotTypeMenu" destination="925" id="1360"/>
+                                </connections>
+                            </customView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1347">
+                        <rect key="frame" x="-100" y="-100" width="583" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="1346">
+                        <rect key="frame" x="-100" y="-100" width="11" height="512"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <connections>
+                <outlet property="footer" destination="1339" id="1343"/>
+                <outlet property="view" destination="1348" id="1355"/>
+            </connections>
+        </customView>
+        <window title="Wire Current" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="1370" userLabel="Wire Current" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="254" width="533" height="256"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="1371">
+                <rect key="frame" x="0.0" y="0.0" width="533" height="256"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView id="1372" customClass="WireCurrent">
+                        <rect key="frame" x="2" y="48" width="529" height="206"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <connections>
+                            <outlet property="currentTypeMenu" destination="1376" id="1384"/>
+                        </connections>
+                    </customView>
+                    <popUpButton verticalHuggingPriority="750" id="1376">
+                        <rect key="frame" x="344" y="16" width="133" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="Magnitude/Phase" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="1379" id="1377">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <menu key="menu" title="OtherViews" id="1378">
+                                <items>
+                                    <menuItem title="Magnitude/Phase" state="on" id="1379"/>
+                                    <menuItem title="Real/Imaginary" id="1380"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
+                </subviews>
+            </view>
+        </window>
+    </objects>
+    <resources>
+        <image name="ColorWheel" width="32" height="32"/>
+        <image name="gear" width="32" height="32"/>
+        <image name="print" width="32" height="32"/>
+    </resources>
+</document>
