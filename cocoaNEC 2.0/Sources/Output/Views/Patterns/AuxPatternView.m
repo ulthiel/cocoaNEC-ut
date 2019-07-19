@@ -39,7 +39,7 @@
 	//	the color index is -1 for black (refererence)
 	string = [ element objectAtIndex:0 ] ;
 	color = [ [ element objectAtIndex:1 ] intValue ] ;
-	output = [ [ NSApp delegate ] output ] ;
+	output = [ (ApplicationDelegate*)[ NSApp delegate ] output ] ;
 	
 	bounds = [ self bounds ] ;
 	top = bounds.size.height - 16 ;
@@ -69,7 +69,7 @@
 	//  clear area and frame it  
 	[ [ NSColor whiteColor ] set ] ; 
 	[ framePath fill ] ; 
-	if ( [ [ [ NSApp delegate ] output ] drawBorders ] ) {
+	if ( [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBorders ] ) {
 		[ [ NSColor blackColor ] set ] ; 
 		[ framePath stroke ] ;
 	}

@@ -287,7 +287,7 @@ static int shortlen( short *p )
 			exprValue = [ NCValue valueWithInt:callResult ] ;
 			
 			if ( isRunModelFunction && callResult != 0 ) {
-				nc = [ [ NSApp delegate ] currentNC ] ;
+				nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 				if ( nc ) {
 					NECInfo *nec = [ nc necResults ] ;
 					//  collect results 
@@ -305,7 +305,7 @@ static int shortlen( short *p )
 			return exprValue ; 
 		}
 		if ( type == REALTYPE ) {
-			system = [ [ NSApp delegate ] currentNCSystem ] ;
+			system = [ (ApplicationDelegate*)[ NSApp delegate ] currentNCSystem ] ;
 			if ( system ) {
 				stackFrame = [ enclosingFunction saveStackFrame ] ;	//  v0.76
 				dv = [ ncFunctionObject evalFunctionAsReal:stack args:argList system:system ] ;

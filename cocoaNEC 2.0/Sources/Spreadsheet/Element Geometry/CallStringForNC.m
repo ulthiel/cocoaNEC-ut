@@ -44,7 +44,7 @@
 	int i ;
 	NSArray *transformStrings ;
 
-	transformStrings = [ [ NSApp delegate ] transformStringsForTransform:transformName ] ;
+	transformStrings = [ (ApplicationDelegate*)[ NSApp delegate ] transformStringsForTransform:transformName ] ;
 	for ( i = 0; i < 6; i++ ) {
 		[ self appendString:[ transformStrings objectAtIndex:i ] ] ;
 		if ( i < 5 ) [ self appendString:@"," ] ;

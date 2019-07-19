@@ -443,7 +443,7 @@
 		compiler = [ [ NCCompiler alloc ] initWithString:sourceString documentNumber:documentNumber ] ;
 		system = [ compiler system ] ;
 		
-		[ [ NSApp delegate ] setCurrentNCSystem:system ] ;
+		[ (ApplicationDelegate*)[ NSApp delegate ] setCurrentNCSystem:system ] ;
 		success = [ compiler precompile ] ;
 		success = ( [ compiler compile ] && success == YES ) ;
 			

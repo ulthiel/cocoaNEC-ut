@@ -224,7 +224,7 @@ static int hgetline( char *line, int maxline, FILE *deck )
         //[ panel setRequiredFileType:@"deck" ] ;
         [ panel setAllowedFileTypes:[ NSArray arrayWithObject:@"deck" ] ] ;
 		
-		directory = ( sourcePath ) ? [ sourcePath stringByDeletingLastPathComponent ] : [ [ NSApp delegate ] defaultDirectory ] ;	
+		directory = ( sourcePath ) ? [ sourcePath stringByDeletingLastPathComponent ] : [ (ApplicationDelegate*)[ NSApp delegate ] defaultDirectory ] ;
         result = [ SavePanelExtension runModalFor:panel directory:directory file:[ window title ] ] ;
 		if ( result == NSModalResponseOK  && [ panel URL ] != nil ) {
 			filePath = [ [ panel URL ] path ] ;
@@ -257,7 +257,7 @@ static int hgetline( char *line, int maxline, FILE *deck )
 //  Delegate to window
 - (void)windowDidBecomeKey:(NSNotification*)aNotification
 {
-	[ [ NSApp delegate ] hollerithBecameKey:self ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] hollerithBecameKey:self ] ;
 }
 
 - (IBAction)runButtonPushed:(id)sender
@@ -271,9 +271,9 @@ static int hgetline( char *line, int maxline, FILE *deck )
 	if ( inputPath ) {
 	
 		if ( [ self writeDeckToPath:inputPath ] ) {
-			result = [ [ NSApp delegate ] runNECEngine:inputPath output:outputPath sourcePath:sourcePath useQuad:[ outputControl isQuadPrecision ] ] ;
+			result = [ (ApplicationDelegate*)[ NSApp delegate ] runNECEngine:inputPath output:outputPath sourcePath:sourcePath useQuad:[ outputControl isQuadPrecision ] ] ;
 			if ( result->errorCode == 0 ) {
-				[ [ NSApp delegate ] displayNECOutput:sourcePath hollerith:inputPath lpt:outputPath source:sourcePath exceptions:[ NSArray array ] resetContext:YES result:result ] ; //  v0.81d
+				[ (ApplicationDelegate*)[ NSApp delegate ] displayNECOutput:sourcePath hollerith:inputPath lpt:outputPath source:sourcePath exceptions:[ NSArray array ] resetContext:YES result:result ] ; //  v0.81d
 			}
             else {
                 //  v0.88
@@ -325,7 +325,7 @@ static int hgetline( char *line, int maxline, FILE *deck )
 - (BOOL)windowShouldClose:(id)window
 {
 	if ( ![ self windowCanClose ] ) return NO ;
-	[ [ NSApp delegate ] hollerithClosing:self ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] hollerithClosing:self ] ;
 	return YES ;
 }
 

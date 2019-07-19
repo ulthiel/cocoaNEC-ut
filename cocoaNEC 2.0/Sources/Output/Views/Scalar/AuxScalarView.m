@@ -45,7 +45,7 @@
 		fontAttributes = fontAttributesWithBackground ;
 	}
 	else {
-		hasBackground = [ [ [ NSApp delegate ] output ] drawBackgrounds ] ;
+		hasBackground = [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBackgrounds ] ;
 		fontAttributes = ( hasBackground ) ? fontAttributesWithBackground : fontAttributesNoBackground ;
 	}
 	
@@ -55,7 +55,7 @@
 	freqStrip.origin.y = bounds.size.height-freqStrip.size.height ;
 	
 	background = [ NSBezierPath bezierPathWithRect:freqStrip ] ;
-	if ( isScreen || [ [ [ NSApp delegate ] output ] drawBackgrounds ] ) {
+	if ( isScreen || [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBackgrounds ] ) {
 		//  fill background
 		[ backgroundColor set ] ;
 		[ background fill ] ; 
@@ -65,7 +65,7 @@
 		[ [ NSColor blackColor ] set ] ;
 		[ background stroke ] ;
 	}
-	if ( isScreen || [ [ [ NSApp delegate ] output ] drawBorders ] ) {
+	if ( isScreen || [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBorders ] ) {
         float by = (int)( bounds.origin.y ) + 0.5 ;
 		//  frame the caption rectangle (ignore top horizontal line (made up by frequency strip)
 		frame = [ NSBezierPath bezierPath ] ;
@@ -105,7 +105,8 @@
 		zx = rxf->rx.y ;
 		z = ( zr + zx*(0.0+1.0fj) ) ;
 		num = denom = z ;
-		num -= 1, denom += 1 ;
+        num -= 1;
+        denom += 1 ;
 		gamma = num/denom ;
 		rho = cabs( gamma ) ;
 		vswr = ( rho > 0.99 ) ? 99.0 : ( 1+rho )/( 1-rho ) ;

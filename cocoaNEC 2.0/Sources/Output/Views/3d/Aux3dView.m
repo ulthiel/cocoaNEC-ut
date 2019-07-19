@@ -41,7 +41,7 @@
 	//  clear area and frame it  
 	[ [ NSColor whiteColor ] set ] ; 
 	[ framePath fill ] ; 
-	output = [ [ NSApp delegate ] output ] ;
+	output = [ (ApplicationDelegate*)[ NSApp delegate ] output ] ;
 	if ( output ) {
 		if ( [ output drawBorders ] ) {
 			[ [ NSColor blackColor ] set ] ; 

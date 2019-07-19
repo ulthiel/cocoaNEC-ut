@@ -25,7 +25,7 @@
 #import "CurrentSource.h"
 #import "DateFormat.h"
 #import "Environment.h"
-#import "expression.h"
+#import "Expression.h"
 #import "formats.h"
 #import "Networks.h"
 #import "Primary.h"
@@ -197,7 +197,7 @@
 	EvalResult result ;
 	
 	system = [ compiler system ] ;
-	[ [ NSApp delegate ] setCurrentNCSystem:system ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] setCurrentNCSystem:system ] ;
 	[ system clearAbort ] ;
 	[ system setRunLoops:0 ] ;				//  block any runs for now
 	
@@ -760,7 +760,7 @@
 	writefd = fopen( [ path UTF8String ], "w" ) ;	//  becomes nec2's input
 	if ( !writefd ) return NO ;
 	
-	[ [ NSApp delegate ] clearError ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] clearError ] ;
 	[ variables validate ] ;
 	expression = [ [ Expression alloc ] initWithLibrary:[ globals library ] parameters:[ environment parameter ] variables:[ variables dictionary ] ] ;
 	
@@ -1046,14 +1046,14 @@
     //  [ panel setRequiredFileType:@"deck" ] ;
     [ panel setAllowedFileTypes:[ NSArray arrayWithObject:@"deck" ] ] ;
     
-	directory = ( sourcePath ) ? [ sourcePath stringByDeletingLastPathComponent ] : [ [ NSApp delegate ] defaultDirectory ] ;	
+	directory = ( sourcePath ) ? [ sourcePath stringByDeletingLastPathComponent ] : [ (ApplicationDelegate*)[ NSApp delegate ] defaultDirectory ] ;
     result = [ SavePanelExtension runModalFor:panel directory:directory file:[ window title ] ] ;
     
 	if ( result == NSModalResponseOK  && [ panel URL ] != nil ) {
 		filePath = [ [ panel URL ] path ] ; ;
 		if ( [ self createNCProgram ] ) {
 			if ( nc == nil ) nc = [ [ NCForSpreadsheet alloc ] initWithListView:ncView cardView:cardView ] ;
-			[ [ NSApp delegate ] setCurrentNC:(NC*)nc ] ;
+			[ (ApplicationDelegate*)[ NSApp delegate ] setCurrentNC:(NC*)nc ] ;
 			[ nc setSourcePath:sourcePath ] ;
 			[ nc createDeck:code ] ;
 			[ nc outputHollerithToFile:filePath ] ;
@@ -1065,7 +1065,7 @@
 {	
 	if ( [ self createNCProgram ] ) {
 		if ( nc == nil ) nc = [ [ NCForSpreadsheet alloc ] initWithListView:ncView cardView:cardView ] ;
-		[ [ NSApp delegate ] setCurrentNC:(NC*)nc ] ;
+		[ (ApplicationDelegate*)[ NSApp delegate ] setCurrentNC:(NC*)nc ] ;
 		[ nc setSourcePath:sourcePath ] ;
 		[ nc runSource:code ] ;
 		return YES ;
@@ -1088,7 +1088,7 @@
 	if ( [ self sanityCheck ] ) {
 		[ self createDeckAndRun ] ;
 		[ self spreadsheetCellChanged:self ] ;		// this will update the spreadsheet display	
-		[ [ NSApp delegate ] showError ] ;
+		[ (ApplicationDelegate*)[ NSApp delegate ] showError ] ;
 	}
 }
 
@@ -1162,7 +1162,7 @@
 //  Delegate to window
 - (void)windowDidBecomeKey:(NSNotification*)aNotification
 {
-	[ [ NSApp delegate ] spreadsheetBecameKey:self ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] spreadsheetBecameKey:self ] ;
 }
 
 //  return YES if not dirty
@@ -1189,7 +1189,7 @@
 - (BOOL)windowShouldClose:(id)window
 {
 	if ( ![ self windowCanClose ] ) return NO ;
-	[ [ NSApp delegate ] spreadsheetClosing:self ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] spreadsheetClosing:self ] ;
 	return YES ;
 }
 
@@ -1320,13 +1320,13 @@
         //  [ panel setRequiredFileType:@"nec" ] ;
         [ panel setAllowedFileTypes:[ NSArray arrayWithObject:@"nec" ] ] ;
  		
-		directory = ( sourcePath ) ? [ sourcePath stringByDeletingLastPathComponent ] : [ [ NSApp delegate ] defaultDirectory ] ;	
+		directory = ( sourcePath ) ? [ sourcePath stringByDeletingLastPathComponent ] : [ (ApplicationDelegate*)[ NSApp delegate ] defaultDirectory ] ;	
         result = [ SavePanelExtension runModalFor:panel directory:directory file:[ window title ] ] ;
 		if ( result == NSModalResponseOK && [ panel URL ] != nil ) {
 			plistPath = [ [ panel URL ] path ] ;
 			[ self saveToPath:plistPath ] ;
 			[ window setTitle:[ [ plistPath lastPathComponent ] stringByDeletingPathExtension ] ] ;
-			[ [ NSApp delegate ] setDefaultDirectory:[ plistPath stringByDeletingLastPathComponent ] ] ;
+			[ (ApplicationDelegate*)[ NSApp delegate ] setDefaultDirectory:[ plistPath stringByDeletingLastPathComponent ] ] ;
 			[ self setSourcePath:plistPath ] ;
 		}
 	}
@@ -1336,7 +1336,7 @@
 	if ( plistPath != nil ) {
 		[ self saveToPath:plistPath ] ;
 		[ window setTitle:[ [ plistPath lastPathComponent ] stringByDeletingPathExtension ] ] ;
-		[ [ NSApp delegate ] setDefaultDirectory:[ plistPath stringByDeletingLastPathComponent ] ] ;
+		[ (ApplicationDelegate*)[ NSApp delegate ] setDefaultDirectory:[ plistPath stringByDeletingLastPathComponent ] ] ;
 		[ self setSourcePath:plistPath ] ;
 		untitled = NO ;
 		dirty = NO ;

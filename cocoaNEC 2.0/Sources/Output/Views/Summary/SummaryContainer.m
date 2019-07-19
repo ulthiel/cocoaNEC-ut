@@ -116,7 +116,7 @@
 
 - (void)drawRect:(NSRect)rect
 {
-	if ( [ [ [ NSApp delegate ] output ] drawBorders ] ) {
+	if ( [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBorders ] ) {
 		[ [ NSColor blackColor ] set ] ; 
 		[ [ NSBezierPath bezierPathWithRect:rect ] stroke ] ;
 	}

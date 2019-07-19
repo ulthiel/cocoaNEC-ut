@@ -378,7 +378,7 @@ static int circle2[] = { -3, -6, -10, -15, -20, -30, -40, -50, -70, 0 } ;
 		[ @"No data." drawAtPoint:[ scale transformPoint:NSMakePoint( -0.905, 0.84 ) ] withAttributes:infoAttributes ] ;
 	}
 	//  output directivity
-	RunInfo *runInfo = [ [ NSApp delegate ] runInfo ] ;
+	RunInfo *runInfo = [ (ApplicationDelegate*)[ NSApp delegate ] runInfo ] ;
 	if ( runInfo->directivity > -0.5 ) {
 		if ( frame.size.width > 450 ) {
 			[ [ NSString stringWithFormat:@"Directivity = %.2f dB", runInfo->directivity ] drawAtPoint:[ scale transformPoint:NSMakePoint( 0.58, 0.92 ) ] withAttributes:infoAttributes ] ;
@@ -464,7 +464,7 @@ static int circle2[] = { -3, -6, -10, -15, -20, -30, -40, -50, -70, 0 } ;
 		//  print job
 		if ( isEmbedded == NO ) {
 			//  regular sized printing Azimuth and Elevation views
-			if ( [ [ [ NSApp delegate ] output ] drawBorders ] ) {
+			if ( [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBorders ] ) {
 				[ [ NSColor blackColor ] set ] ; 
 				[ framePath stroke ] ;
 			}

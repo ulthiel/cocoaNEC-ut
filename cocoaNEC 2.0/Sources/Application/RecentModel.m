@@ -38,7 +38,7 @@
 //  open recent antenna model
 - (void)performOpen:(NSString*)path
 {
-	[ [ NSApp delegate ] openModelAtPath:path includeInRecent:YES ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] openModelAtPath:path includeInRecent:YES ] ;
 }
 
 @end

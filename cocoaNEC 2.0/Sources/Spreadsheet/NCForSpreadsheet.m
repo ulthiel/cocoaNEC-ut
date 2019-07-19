@@ -104,7 +104,7 @@
 //	v0.55b
 - (void)setProgress:(Boolean)state
 {
-	[ [ [ NSApp delegate ] currentSpreadsheet ] setProgress:state ] ;
+	[ [ (ApplicationDelegate*)[ NSApp delegate ] currentSpreadsheet ] setProgress:state ] ;
 }
 
 @end

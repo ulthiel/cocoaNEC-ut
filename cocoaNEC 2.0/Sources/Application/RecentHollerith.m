@@ -36,7 +36,7 @@
 
 - (void)performOpen:(NSString*)path
 {
-	[ [ NSApp delegate ] openHollerithAtPath:path ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] openHollerithAtPath:path ] ;
 }
 
 @end

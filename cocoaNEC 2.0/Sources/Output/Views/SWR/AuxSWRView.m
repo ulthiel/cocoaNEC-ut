@@ -97,7 +97,8 @@
 	
 	z0 = [ [ outputObject swrView ] z0 ] ;
 	num = denom = z/z0 ;
-	num -= 1, denom += 1 ;
+    num -= 1;
+    denom += 1 ;
 	rho = num/denom ;
 	r = cabs( rho ) ;
 	vswr = ( r > 0.99 ) ? 99.0 : ( 1+r )/( 1-r ) ;
@@ -143,7 +144,7 @@
 	path = [ NSBezierPath bezierPathWithRect:bounds ] ;
 	[ [ NSColor whiteColor ] set ] ;
 	[ path fill ] ;
-	if ( [ [ [ NSApp delegate ] output ] drawBorders ] ) {
+	if ( [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBorders ] ) {
 		[ [ NSColor blackColor ] set ] ;
 		[ path stroke ] ;
 	}

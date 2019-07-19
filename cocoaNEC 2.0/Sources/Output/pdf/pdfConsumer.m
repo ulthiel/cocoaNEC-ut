@@ -21,7 +21,7 @@
 //	limitations under the License.
 //	-----------------------------------------------------------------------------
 
-#import "pdfconsumer.h"
+#import "pdfConsumer.h"
 
 //  Class for PDF Consumers in CG.
 

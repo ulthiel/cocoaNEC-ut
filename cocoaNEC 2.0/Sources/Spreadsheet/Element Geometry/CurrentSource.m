@@ -45,7 +45,7 @@
 	wire = [ attachedToWire info ] ;
 	//  sanity check
 	if ( wire->excitationKind != 2 ) {
-		[ [ NSApp delegate ] insertError:@"Inconsistency with current source!" ] ;
+		[ (ApplicationDelegate*)[ NSApp delegate ] insertError:@"Inconsistency with current source!" ] ;
 		return ;
 	}
 	

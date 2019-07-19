@@ -126,7 +126,7 @@
 
 	segments = [ (WireGeometry*)wire numberOfSegments ] ;
 	if ( segments <= 0 ) {
-		[ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Number of segments missing for element named %s.", [ [ wire nameField ] UTF8String ] ] ] ;
+		[ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Number of segments missing for element named %s.", [ [ wire nameField ] UTF8String ] ] ] ;
 		return 1 ;
 	}
 	switch ( [ locationMatrix selectedRow ] ) {
@@ -152,14 +152,14 @@
 	
 	string = [ [ matrix cellAtRow:row column:0 ] stringValue ] ;
 	if ( string == nil || [ string length ] == 0 ) {		
-		if ( cellName != nil ) [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Empty \"%s\" cell (row %d of network table).", cellName, networkRow+1 ] ] ;
+		if ( cellName != nil ) [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Empty \"%s\" cell (row %d of network table).", cellName, networkRow+1 ] ] ;
 		// empty cell
 		resultValue = 0.0 ;
 	}
 	else {
-		result = [ [ [ NSApp delegate ] currentSpreadsheet ] evaluateFormula:string ] ;
+		result = [ [ (ApplicationDelegate*)[ NSApp delegate ] currentSpreadsheet ] evaluateFormula:string ] ;
 		if ( result.errorCode != 0 ) {
-			if ( cellName != nil ) [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Formular error in \"%s\" cell (row %d of network table).", cellName, networkRow+1 ] ] ;
+			if ( cellName != nil ) [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Formular error in \"%s\" cell (row %d of network table).", cellName, networkRow+1 ] ] ;
 			resultValue = 0.0 ;
 		}
 		else {
@@ -266,12 +266,12 @@
 	ElementGeometry *e ;
 	
 	if ( name == nil ) {
-		 [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"%s at row %d of network table is missing an element name.", type, row+1 ] ] ;
+		 [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"%s at row %d of network table is missing an element name.", type, row+1 ] ] ;
 		 return nil ;
 	}
 	e = [ spreadsheet wireForName:name ] ;
 	if ( e == nil ) {
-		 [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Cannot find an element named \"%s\" used in %s.\n", [ name UTF8String ], type ] ] ;
+		 [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Cannot find an element named \"%s\" used in %s.\n", [ name UTF8String ], type ] ] ;
 		 return nil ;
 	}
 	return e ;

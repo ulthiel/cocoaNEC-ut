@@ -566,7 +566,7 @@ static WireCoord coordValue( NSArray* args, int index )
 {
 	int engine ;
 	
-	engine = [ [ NSApp delegate ] engine ];	
+	engine = [ (ApplicationDelegate*)[ NSApp delegate ] engine ];
 	if ( engine == kNEC42Engine || engine == kNEC42EngineGN2 ) return YES ;
 	
 	if ( stack != nil ) [ stack->errors addObject:[ NSString stringWithFormat:@"The function %s requires NEC-4.2 engine to run, please select NEC-4.2 in cocoaNEC preferences", name ] ] ;
@@ -580,7 +580,7 @@ static WireCoord coordValue( NSArray* args, int index )
 	int engine ;
 	
 	//  v0.78
-	engine = [ [ NSApp delegate ] engine ];	
+	engine = [ (ApplicationDelegate*)[ NSApp delegate ] engine ];
 	if ( engine == kNEC41Engine || engine == kNEC42Engine ) return YES ;
 	
 	if ( stack != nil ) [ stack->errors addObject:[ NSString stringWithFormat:@"The function %s requires NEC-4 engine to run, please select NEC-4.1 or NEC-4.2 in cocoaNEC preferences", name ] ] ;
@@ -667,7 +667,7 @@ static WireCoord coordValue( NSArray* args, int index )
 
 - (NCValue*)useNECRadials:(NSArray*)args prototype:(NSArray*)prototype
 {
-	NC *nc = [ [ NSApp delegate ] currentNC ] ;
+	NC *nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 	NECRadials *necRadials = [ nc necRadials ] ;
 	
 	necRadials->useNECRadials = YES ;
@@ -1532,7 +1532,7 @@ static WireCoord coordValue( NSArray* args, int index )
 	NCLoad *load ;
 	int engine ;
 
-	engine = [ [ NSApp delegate ] engine ] ;
+	engine = [ (ApplicationDelegate*)[ NSApp delegate ] engine ] ;
 	if ( engine == knec2cEngine ) {
 		[ AlertExtension modalAlert:@"Adding insulation sheath to wire?" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"\nThe IS (insulation sheath) card only works with NEC-4.\n\nThe card will not be generated." ] ;
 		return ;
@@ -1561,7 +1561,7 @@ static WireCoord coordValue( NSArray* args, int index )
 			conductive = doubleValue( args, 2 ) ;
 			radius = doubleValue( args, 3 ) ;
 			//  v0.78
-			engine = [ [ NSApp delegate ] engine ] ;
+			engine = [ (ApplicationDelegate*)[ NSApp delegate ] engine ] ;
 			if ( engine == kNEC41Engine || engine == kNEC42Engine ) {
 				//  NEC-4.  Use IS card.
 				[ self nec4Insulate:element insulationRadius:radius permittivity:permittivity conductivity:conductive ] ;
@@ -2238,7 +2238,7 @@ static WireCoord coordValue( NSArray* args, int index )
 - (NCValue*)runModel:(NSArray*)args prototype:(NSArray*)prototype
 {
 	Boolean success ;
-	NC *nc = [ [ NSApp delegate ] currentNC ] ;
+	NC *nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 	
 	if ( runLoops <= 0 ) return [ NCValue valueWithInt:0 ] ;
 	
@@ -2266,7 +2266,7 @@ static WireCoord coordValue( NSArray* args, int index )
 
 - (FeedpointInfo*)currentFeedpointInfo:(int)index
 {
-	NC *nc = [ [ NSApp delegate ] currentNC ] ;
+	NC *nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 	NECInfo *necResults = [ nc necResults ] ;
 	NSArray *feedpoints = necResults->feedpointArray ;
 	intType count = [ feedpoints count ] ;
@@ -2290,7 +2290,8 @@ static WireCoord coordValue( NSArray* args, int index )
 	if ( info == nil ) return [ NCValue valueWithDouble:99.0 ] ;
 	
 	num = denom = ( info->zr + info->zi*(0.0+1.0fj) ) ;
-	num -= 50.0, denom += 50.0 ;
+    num -= 50.0;
+    denom += 50.0 ;
 	rho = num/denom ;
 	r = cabs( rho ) ;
 	vswr = ( r > 0.99 ) ? 99.0 : ( 1+r )/( 1-r ) ;
@@ -2515,7 +2516,7 @@ static char *makeSimpleFormat( char *outs, char *ins )
 	intType i, type, count, intval ;
 	double floatval ;
 	char fmt[1024], currentfmt[1024], *remainingfmt, output[1024] ;
-	NC *nc = [ [ NSApp delegate ] currentNC ] ;
+	NC *nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 	
 	count = [ args count ] ;
 	if ( count == 0 ) return [ NCValue valueWithInt:0 ] ;

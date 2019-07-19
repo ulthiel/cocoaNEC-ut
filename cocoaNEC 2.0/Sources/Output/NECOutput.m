@@ -494,7 +494,7 @@ static float angleDifference( float angle, float target )
 		[ self refreshGeometry ] ;
 	}
 	//  summary - start
-	engine = [ [ NSApp delegate ] engine ] ;
+	engine = [ (ApplicationDelegate*)[ NSApp delegate ] engine ] ;
 	
 	//	v0.78
 	switch ( engine ) {
@@ -548,7 +548,8 @@ static float angleDifference( float angle, float target )
 				if ( zref < 0.1 ) zref = 50 ;
 				
 				num = denom = ( feed->zr + feed->zi*(0.0+1.0fj) ) ;
-				num -= zref, denom += zref ;
+                num -= zref;
+                denom += zref ;
 				rho = num/denom ;
 				r = cabs( rho ) ;
 				vswr = ( r > 0.99 ) ? 99.0 : ( 1+r )/( 1-r ) ;
@@ -605,7 +606,7 @@ static float angleDifference( float angle, float target )
 											
 			power = 10.*log10( peak/average ) ;
 			[ context setDirectivity:power ] ;
-			[ [ NSApp delegate ] setDirectivity:power ] ;
+			[ (ApplicationDelegate*)[ NSApp delegate ] setDirectivity:power ] ;
 			[ self appendSummary:[ NSString stringWithFormat:@"Directivity:  %.2f dB\n", power ] ] ;
 		}
 	}
@@ -842,7 +843,7 @@ static float angleDifference( float angle, float target )
 	OutputContext *context ;
 	intType i, count, engine ;
 
-	engine = [ [ NSApp delegate ] engine ] ;
+	engine = [ (ApplicationDelegate*)[ NSApp delegate ] engine ] ;
 	
 	//  first check to see if the context has already been established (compare name and engine)
 	count = [ contexts count ] ;
@@ -956,7 +957,7 @@ static float angleDifference( float angle, float target )
 	radioButton = [ gainPolarizationMatrix selectedCell ] ;  // 0.75i
 	pol = [ radioButton tag ] ;			// 0 - vert, 1 - horiz, 2 - total, 3 - LHCP, 4 - RHCP, 5 - V+H, 6 - L+R
 	[ self setPlotPolarization:pol ] ;
-	[ [ NSApp delegate ] setPolarizationMenu:pol ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] setPolarizationMenu:pol ] ;
 }
 
 - (void)polarizationChanged:(intType)pol

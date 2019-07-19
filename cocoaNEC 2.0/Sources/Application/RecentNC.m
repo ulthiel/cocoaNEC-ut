@@ -37,7 +37,7 @@
 
 - (void)performOpen:(NSString*)path
 {
-	[ [ NSApp delegate ] openNCModelAtPath:path ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] openNCModelAtPath:path ] ;
 }
 
 @end

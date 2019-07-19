@@ -141,7 +141,7 @@
         [ panel setAllowedFileTypes:[ NSArray arrayWithObject:@"nc" ] ] ;
         
         
-		directory = ( stack.sourcePath ) ? [ stack.sourcePath stringByDeletingLastPathComponent ] : [ [ NSApp delegate ] defaultDirectory ] ;
+		directory = ( stack.sourcePath ) ? [ stack.sourcePath stringByDeletingLastPathComponent ] : [ (ApplicationDelegate*)[ NSApp delegate ] defaultDirectory ] ;
         
         resultCode = [ SavePanelExtension runModalFor:panel directory:directory file:[ window title ] ] ;
         
@@ -155,7 +155,7 @@
 	if ( filePath != nil ) {
 		[ [ textView string ] writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil ] ;
 		[ window setTitle:[ [ filePath lastPathComponent ] stringByDeletingPathExtension ] ] ;
-		[ [ NSApp delegate ] setDefaultDirectory:[ filePath stringByDeletingLastPathComponent ] ] ;
+		[ (ApplicationDelegate*)[ NSApp delegate ] setDefaultDirectory:[ filePath stringByDeletingLastPathComponent ] ] ;
 		[ self setSourcePath:filePath ] ;
 		untitled = NO ;
 		dirty = NO ;
@@ -266,7 +266,7 @@
 //  Delegate to window
 - (void)windowDidBecomeKey:(NSNotification*)aNotification
 {
-	[ [ NSApp delegate ] ncBecameKey:self ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] ncBecameKey:self ] ;
 }
 
 //  return YES if not dirty
@@ -294,7 +294,7 @@
 {
 	if ( ![ self windowCanClose ] ) return NO ;
 	
-	[ [ NSApp delegate ] ncClosing:self ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] ncClosing:self ] ;
 	return YES ;
 }
 
@@ -331,7 +331,7 @@
 	[ panel setTitle:@"Save NEC-2 Hollerith Deck" ] ;
     [ panel setAllowedFileTypes:[ NSArray arrayWithObject:@"deck" ] ] ;
 	
-	directory = [ [ NSApp delegate ] defaultDirectory ] ;
+	directory = [ (ApplicationDelegate*)[ NSApp delegate ] defaultDirectory ] ;
     
     resultCode = [ SavePanelExtension runModalFor:panel directory:directory file:[ window title ] ] ;
     

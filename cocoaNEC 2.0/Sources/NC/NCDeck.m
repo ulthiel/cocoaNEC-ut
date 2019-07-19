@@ -206,7 +206,7 @@
 	
 	if ( [ system isFreeSpace ] ) return ;
 	
-	nc = [ [ NSApp delegate ] currentNC ] ;
+	nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 	necRadials = [ nc necRadials ] ;
 
 	nRadials = 0 ;
@@ -220,7 +220,7 @@
 		//  v0.78 Use GN3 for Sommerfeld ground in NEC-4.2
 		sommerfeld = 0 ;
 		if ( [ system isSommerfeld ] ) {
-			sommerfeld = ( [ [ NSApp delegate ] engine ] == kNEC42Engine ) ? 3 : 2 ;
+			sommerfeld = ( [ (ApplicationDelegate*)[ NSApp delegate ] engine ] == kNEC42Engine ) ? 3 : 2 ;
 		}
 		if ( nRadials == 0 ) {
 			[ self outputCard:[ NSString stringWithFormat:@"GN  %d%5d    0    0%10s%10s", sommerfeld, nRadials, dtos( [ system dielectric ]), dtos( [ system conductivity ] ) ] ] ;
@@ -266,7 +266,7 @@
 			[ self outputCard:[ NSString stringWithFormat:@"RP  0  360    1 %1d000   -90.000%10s     1.000     0.000 %9.3E", linear, dtos( [ [ angles objectAtIndex:i ] doubleValue ] ), distance ] ] ;
 		}
 	}
-	if ( generate3d && [[ NSApp delegate ] enabled3d ] )		//  v0.61r
+	if ( generate3d && [(ApplicationDelegate*)[ NSApp delegate ] enabled3d ] )		//  v0.61r
 		[ self outputCard:[ NSString stringWithFormat:@"RP  0   91  120 %1d001     0.000     0.000     2.000     3.000 5.000E+03", linear ] ] ;				// v 0.30, v0.62
 }
 

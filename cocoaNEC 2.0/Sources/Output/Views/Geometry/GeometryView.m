@@ -602,7 +602,7 @@ static float xyzDistSq( float x, float y, float z, float x1, float y1, float z1 
 	int i, j ;
 	float x ;
 	
-	NSColor **color = [ [ NSApp delegate ] colorForMagnitude ] ;
+	NSColor **color = [ (ApplicationDelegate*)[ NSApp delegate ] colorForMagnitude ] ;
 	
 	for ( i = 0; i < 256; i += 4 ) {
 		path = [ NSBezierPath bezierPath ] ;
@@ -649,7 +649,7 @@ static float xyzDistSq( float x, float y, float z, float x1, float y1, float z1 
  		NSBezierPath *framePath = [ NSBezierPath bezierPathWithRect:bounds ] ;
 		[ [ NSColor whiteColor ] set ] ; 
 		[ framePath fill ] ;   
-		if ( [ [ [ NSApp delegate ] output ] drawBorders ] ) {
+		if ( [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBorders ] ) {
 			[ [ NSColor blackColor ] set ] ; 
 			[ framePath stroke ] ;
 		}
@@ -713,7 +713,7 @@ static float xyzDistSq( float x, float y, float z, float x1, float y1, float z1 
 		break ;
 	case GEOMETRYCURRENT:
 		currentName = @"(Scaled Magnitude)" ;
-		[ self drawGeometryType:currentType color:[ [ NSApp delegate ] colorForMagnitude ] scale:scale ] ;	//  v0.78
+		[ self drawGeometryType:currentType color:[ (ApplicationDelegate*)[ NSApp delegate ] colorForMagnitude ] scale:scale ] ;	//  v0.78
 		[ self drawFeedpoints:scale ] ;
 		[ self drawLoads:scale ] ;
 		[ self drawCaptions:scale ] ;				//  v0.75c
@@ -721,7 +721,7 @@ static float xyzDistSq( float x, float y, float z, float x1, float y1, float z1 
 		break ;
 	case GEOMETRYPOWER:
 		currentName = @"(Magnitude)" ;
-		[ self drawGeometryType:currentType color:[ [ NSApp delegate ] colorForMagnitude ] scale:scale ] ;	//  v0.78
+		[ self drawGeometryType:currentType color:[ (ApplicationDelegate*)[ NSApp delegate ] colorForMagnitude ] scale:scale ] ;	//  v0.78
 		[ self drawFeedpoints:scale ] ;
 		[ self drawLoads:scale ] ;
 		[ self drawCaptions:scale ] ;				//  v0.75c
@@ -729,7 +729,7 @@ static float xyzDistSq( float x, float y, float z, float x1, float y1, float z1 
 		break ;
 	case GEOMETRYPHASE:
 		currentName = @"(Magnitude & Phase)" ;
-		[ self drawGeometryType:currentType color:[ [ NSApp delegate ] colorForMagnitudeAndPhase ] scale:scale ] ;	//  v0.78
+		[ self drawGeometryType:currentType color:[ (ApplicationDelegate*)[ NSApp delegate ] colorForMagnitudeAndPhase ] scale:scale ] ;	//  v0.78
 		[ self drawFeedpoints:scale ] ;
 		[ self drawLoads:scale ] ;
 		[ self drawCaptions:scale ] ;				//  v0.75c
@@ -737,7 +737,7 @@ static float xyzDistSq( float x, float y, float z, float x1, float y1, float z1 
 		break ;
 	case GEOMETRYRELATIVEPHASE:
 		currentName = @"(Magnitude & Relative Phase)" ;
-		[ self drawGeometryType:currentType color:[ [ NSApp delegate ] colorForMagnitudeAndPhase ] scale:scale ] ;	//  v0.78
+		[ self drawGeometryType:currentType color:[ (ApplicationDelegate*)[ NSApp delegate ] colorForMagnitudeAndPhase ] scale:scale ] ;	//  v0.78
 		[ self drawFeedpoints:scale ] ;
 		[ self drawLoads:scale ] ;
 		[ self drawCaptions:scale ] ;				//  v0.75c
@@ -745,7 +745,7 @@ static float xyzDistSq( float x, float y, float z, float x1, float y1, float z1 
 		break ;
 	case GEOMETRYGRADIENT:
 		currentName = @"(Current Gradient)" ;
-		[ self drawGeometryType:currentType color:[ [ NSApp delegate ] colorForMagnitude ] scale:scale ] ;
+		[ self drawGeometryType:currentType color:[ (ApplicationDelegate*)[ NSApp delegate ] colorForMagnitude ] scale:scale ] ;
 		[ self drawFeedpoints:scale ] ;
 		[ self drawLoads:scale ] ;
 		[ self drawCaptions:scale ] ;				//  v0.75c

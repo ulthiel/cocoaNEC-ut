@@ -102,7 +102,7 @@
 		return 0  ;
 	}
 	if ( symClass == NCSYSTEM ) {
-		nc = [ [ NSApp delegate ] currentNC ] ;
+		nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 		result = [ [ nc system ] performSelector:selector withObject:args withObject:[ self arrayWithPrototypes:argPrototypes ] ] ;
 		return [ result intValue ] ;
 	}
@@ -123,7 +123,7 @@
 		return 0.0  ;
 	}
 	if ( symClass == NCSYSTEM ) {
-		nc = [ [ NSApp delegate ] currentNC ] ;
+		nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 		result = [ system performSelector:selector withObject:args withObject:[ self arrayWithPrototypes:argPrototypes ] ] ;
 		return [ result doubleValue ] ;
 	}
@@ -144,7 +144,7 @@
 		return (NCElement*)[ NCValue undefinedValue ] ;
 	}
 	if ( symClass == NCSYSTEM ) {
-		nc = [ [ NSApp delegate ] currentNC ] ;
+		nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 		return [ [ nc system ] performSelector:selector withObject:args withObject:[ self arrayWithPrototypes:argPrototypes ] ] ;
 	}
 	return nil ;
@@ -164,7 +164,7 @@
 		return (NCCoax*)[ NCValue undefinedValue ] ;
 	}
 	if ( symClass == NCSYSTEM ) {
-		nc = [ [ NSApp delegate ] currentNC ] ;
+		nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 		result = [ [ nc system ] performSelector:selector withObject:args withObject:[ self arrayWithPrototypes:argPrototypes ] ] ;
 		return [ result coaxValue ] ;
 	}
@@ -185,7 +185,7 @@
 		return (NCVector*)[ NCValue undefinedValue ] ;
 	}
 	if ( symClass == NCSYSTEM ) {
-		nc = [ [ NSApp delegate ] currentNC ] ;
+		nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 		result = [ [ nc system ] performSelector:selector withObject:args withObject:[ self arrayWithPrototypes:argPrototypes ] ] ;
 		return [ result vectorValue ] ;
 	}
@@ -206,7 +206,7 @@
 		return (NCTransform*)[ NCValue undefinedValue ] ;
 	}
 	if ( symClass == NCSYSTEM ) {
-		nc = [ [ NSApp delegate ] currentNC ] ;
+		nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 		result = [ [ nc system ] performSelector:selector withObject:args withObject:[ self arrayWithPrototypes:argPrototypes ] ] ;
 		return [ result transformValue ] ;
 	}
@@ -218,7 +218,7 @@
 {
 	NC *nc ;
 	
-	nc = [ [ NSApp delegate ] currentNC ] ;
+	nc = [ (ApplicationDelegate*)[ NSApp delegate ] currentNC ] ;
 	return [ [ nc system ] performSelector:selector withObject:args withObject:[ self arrayWithPrototypes:argPrototypes ] ] ;
 }
 

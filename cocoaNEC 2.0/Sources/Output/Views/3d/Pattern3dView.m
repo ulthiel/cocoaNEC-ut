@@ -159,11 +159,11 @@ static float phong( float x0, float y0, float z0, float x1, float y1, float z1, 
 	}
 	else {
 		framePath = [ NSBezierPath bezierPathWithRect:rect ] ;
-		if ( [ [ [ NSApp delegate ] output ] drawBackgrounds ] ) {
+		if ( [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBackgrounds ] ) {
 			[ [ NSColor grayColor ] set ] ;	
 			[ framePath fill ] ;  
 		}
-		if ( [ [ [ NSApp delegate ] output ] drawBorders ] ) {
+		if ( [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBorders ] ) {
 			[ [ NSColor blackColor ] set ] ; 
 			[ framePath stroke ] ;
 		}

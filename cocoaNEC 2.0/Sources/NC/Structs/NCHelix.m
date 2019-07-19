@@ -56,7 +56,7 @@
 	if ( tag <= 0 ) return [ NSArray array ] ;
 	
 	//  v0.75g. v0.75h, v0.78
-	engine = [ [ NSApp delegate ] engine ] ;
+	engine = [ (ApplicationDelegate*)[ NSApp delegate ] engine ] ;
 	if ( engine == kNEC41Engine || engine == kNEC42Engine || engine == kNEC42EngineGN2 ) {
 		//  NEC-4 GH format
 		turns = helixLength/turnsSpacing ;

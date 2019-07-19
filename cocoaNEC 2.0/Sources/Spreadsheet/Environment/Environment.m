@@ -154,7 +154,7 @@
 	double freq, dielec, cond ;
 	Spreadsheet *eval ;
 	
-	eval = [ [ NSApp delegate ] currentSpreadsheet ] ;
+	eval = [ (ApplicationDelegate*)[ NSApp delegate ] currentSpreadsheet ] ;
 	
 	freq = [ eval doubleValueForObject:freqField ] ;
 	[ self setDoubleValue:freq forKey:@"g_frequency" ] ;
@@ -187,7 +187,7 @@
 	double freq, high, incr, swap ;
 	Spreadsheet *eval ;
 	
-	eval = [ [ NSApp delegate ] currentSpreadsheet ] ;
+	eval = [ (ApplicationDelegate*)[ NSApp delegate ] currentSpreadsheet ] ;
 	
 	row = [ freqMatrix selectedRow ] ;
 	[ frequencyArray removeAllObjects ] ;

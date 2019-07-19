@@ -756,7 +756,7 @@ static float value(NSPoint rx, float z0, intType plotType )
 	}
 	else {
 		//  for printing
-        hasBackground = [ [ [ NSApp delegate ] output ] drawBackgrounds ] ;
+        hasBackground = [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBackgrounds ] ;
 		fontAttributes = ( hasBackground ) ? fontAttributesWithBackground : fontAttributesNoBackground ;
 	}
 	width = canvasBounds.size.width ;
@@ -914,7 +914,9 @@ static NSColor *baseColor( float r, float g, float b )
 		
 		//  plots
         backgroundColor = [ [ NSColor colorWithCalibratedRed:0 green:0.1 blue:0 alpha:1 ] retain ] ;
-		gridRed = 0, gridGreen = 1, gridBlue = 0.1 ;
+        gridRed = 0;
+        gridGreen = 1;
+        gridBlue = 0.1 ;
 		plotColor = plotColorWithBackground = baseColor( 0.9, 0.8, 0 ) ;
 		alternatePlotColor = alternatePlotColorWithBackground = baseColor( 0.1, 0.9, 1 ) ;
 		plotColorNoBackground = baseColor( 1, 0, 0 ) ;

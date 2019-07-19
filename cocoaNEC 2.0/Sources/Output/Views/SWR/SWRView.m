@@ -577,7 +577,7 @@ static void MinusXLabel( PDFConsumer *p, float x, char *str )
 		backgroundPath = [ NSBezierPath bezierPathWithRect:rect ] ;
 		[ [ NSColor whiteColor ] set ] ;
 		[ backgroundPath fill ] ;
-		if ( [ [ [ NSApp delegate ] output ] drawBorders ] ) {
+		if ( [ [ (ApplicationDelegate*)[ NSApp delegate ] output ] drawBorders ] ) {
 			[ [ NSColor blackColor ] set ] ;
 			[ backgroundPath stroke ] ;
 		}

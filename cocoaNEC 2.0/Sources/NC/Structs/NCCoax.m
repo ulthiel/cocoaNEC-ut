@@ -561,7 +561,7 @@
 		default:
 			//  unknown coax type
 			//  output runtime error
-			[ [ [ [ NSApp delegate ] currentNCSystem ] runtimeStack ]->errors addObject:[ NSString stringWithFormat:@"Coax ignored because type (%d) is undefined.", type ] ] ;
+			[ [ [ (ApplicationDelegate*)[ NSApp delegate ] currentNCSystem ] runtimeStack ]->errors addObject:[ NSString stringWithFormat:@"Coax ignored because type (%d) is undefined.", type ] ] ;
 			return nil ;
 		}
 		k0 *= units ;
