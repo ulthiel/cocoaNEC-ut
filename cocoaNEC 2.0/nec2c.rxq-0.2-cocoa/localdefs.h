@@ -73,7 +73,11 @@ static void 	intrp(doubletype x, doubletype y, complextype *f1, complextype *f2,
 static void 	intx(doubletype el1, doubletype el2, doubletype b, int ij, doubletype *sgr, doubletype *sgi, int ijaa, doubletype zpka, doubletype rkba );
 static int		isegno(int itagi, int mx);
 static void 	load(int *ldtyp, int *ldtag, int *ldtagf, int *ldtagt, doubletype *zlr, doubletype *zli, doubletype *zlc);
-static void 	move(doubletype rox, doubletype roy, doubletype roz, doubletype xs, doubletype ys, doubletype zs, int its, int nrpt, int itgi);
+//ulthiel: moved OVERLOADABLE definition here from nec2common.m and added it to declaration of the move function below.
+//I think this was missing and caused an error.
+#define OVERLOADABLE __attribute__((overloadable))
+static OVERLOADABLE void     move(doubletype rox, doubletype roy, doubletype roz, doubletype xs, doubletype ys, doubletype zs, int its, int nrpt, int itgi);
+//static void 	move(doubletype rox, doubletype roy, doubletype roz, doubletype xs, doubletype ys, doubletype zs, int its, int nrpt, int itgi);
 static void 	nefld(doubletype xob, doubletype yob, doubletype zob, complextype *ex, complextype *ey, complextype *ez);
 static void 	netwk(complextype *cm, complextype *cmb, complextype *cmc, complextype *cmd, int *ip, complextype *einc);
 static void 	nfpat(void);

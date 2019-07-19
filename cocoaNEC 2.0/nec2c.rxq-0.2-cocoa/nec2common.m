@@ -7202,15 +7202,23 @@ static void load( int *ldtyp, int *ldtag, int *ldtagf, int *ldtagt,
 /* respectively, then shifted by xs,ys,zs */
 
 //  v0.88  move needs to have overlapable attribute
-#define OVERLOADABLE __attribute__((overloadable))
-
-//ulthiel: get error "redeclaration of 'move' must not have the 'overloadable' attribute
-//original
-//static OVERLOADABLE void move( doubletype rox, doubletype roy, doubletype roz, doubletype xs,
-//                              doubletype ys, doubletype zs, int its, int nrpt, int itgi )
+//ulthiel: commented out the line
+//
+//#define OVERLOADABLE __attribute__((overloadable))
+//
+//Reason is that for the function below we get error
+//
+//"redeclaration of 'move' must not have the 'overloadable' attribute
+//
+//I think the problem is that in localdefs.h the function move is delcared
+//without OVERLOADABLE.
+//I moved the declaration of OVERLOADABLE to localdefs.h and added
+//OVERLOADABLE to the declaration there. Now it works.
+static OVERLOADABLE void move( doubletype rox, doubletype roy, doubletype roz, doubletype xs,
+                              doubletype ys, doubletype zs, int its, int nrpt, int itgi )
 //removing the OVERLOADABLE
-static void move( doubletype rox, doubletype roy, doubletype roz, doubletype xs,
-    doubletype ys, doubletype zs, int its, int nrpt, int itgi )
+//static void move( doubletype rox, doubletype roy, doubletype roz, doubletype xs,
+//    doubletype ys, doubletype zs, int its, int nrpt, int itgi )
 {
   int nrp, ix, i1, k, ir, i, ii, mreq;
   doubletype sps, cps, sth, cth, sph, cph, xx, xy ;
