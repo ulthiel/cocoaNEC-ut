@@ -159,12 +159,12 @@
 	case 1:
 		//  voltage
 		info.excitationLocation = [ self excitationSegment:exLocationMatrix segNumber:exLocationSegment ] ;
-		for ( i = 0; i < 2; i++ ) info.excitationVector[i] = [ [ NSApp delegate ] doubleValueForObject:[ exVoltageMatrix cellAtRow:i column:0 ] ] ;
+		for ( i = 0; i < 2; i++ ) info.excitationVector[i] = [ (ApplicationDelegate*)[ NSApp delegate ] doubleValueForObject:[ exVoltageMatrix cellAtRow:i column:0 ] ] ;
 		break ;
 	case 2:
 		//  current
 		info.excitationLocation = [ self excitationSegment:curLocationMatrix segNumber:curLocationSegment ] ;
-		for ( i = 0; i < 2; i++ ) info.excitationVector[i] = [ [ NSApp delegate ] doubleValueForObject:[ currentMatrix cellAtRow:i column:0 ] ] ;
+		for ( i = 0; i < 2; i++ ) info.excitationVector[i] = [ (ApplicationDelegate*)[ NSApp delegate ] doubleValueForObject:[ currentMatrix cellAtRow:i column:0 ] ] ;
 		break ;
 	}
 	return &info ;

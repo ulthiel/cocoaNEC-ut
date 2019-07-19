@@ -69,6 +69,8 @@
 	<string>Burk</string>
 	<key>CFBundleVersion</key>
 	<string>0.92</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.education</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

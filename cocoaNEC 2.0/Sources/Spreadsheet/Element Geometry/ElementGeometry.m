@@ -414,22 +414,22 @@
 
 - (int)numberOfSegments
 {
-	return [ [ NSApp delegate ] intValueForObject:[ self fieldForNumberOfSegments ] ] ;
+	return [ (ApplicationDelegate*)[ NSApp delegate ] intValueForObject:[ self fieldForNumberOfSegments ] ] ;
 }
 
 - (double)wireRadius
 {
-	return [ [ NSApp delegate ] doubleValueForObject:[ self fieldForWireRadius ] ] ;
+	return [ (ApplicationDelegate*)[ NSApp delegate ] doubleValueForObject:[ self fieldForWireRadius ] ] ;
 }
 
 - (double)valueOfCoordinate1:(int)component
 {
-	return [ [ NSApp delegate ] doubleValueForObject:[ self fieldForCoordinate1:component ] ] ;
+	return [ (ApplicationDelegate*)[ NSApp delegate ] doubleValueForObject:[ self fieldForCoordinate1:component ] ] ;
 }
 
 - (double)valueOfCoordinate2:(int)component
 {
-	return [ [ NSApp delegate ] doubleValueForObject:[ self fieldForCoordinate2:component ] ] ;
+	return [ (ApplicationDelegate*)[ NSApp delegate ] doubleValueForObject:[ self fieldForCoordinate2:component ] ] ;
 }
 
 //	v0.55
@@ -495,7 +495,7 @@
 {
 	int segment, segments ;
 
-	segments = [ [ NSApp delegate ] intValueForObject:segmentsField ] ;
+	segments = [ (ApplicationDelegate*)[ NSApp delegate ] intValueForObject:segmentsField ] ;
 
 	switch ( [ matrix selectedRow ] ) {
 	default:
@@ -508,7 +508,7 @@
 	case 2:
 		return segments ;
 	case 3:
-		segment = [ [ NSApp delegate ] intValueForObject:field ] ;
+		segment = [ (ApplicationDelegate*)[ NSApp delegate ] intValueForObject:field ] ;
 		if ( segment < 1 ) segment = 1 ; else if ( segment > segments ) segment = segments ;
 		return segment ;
 	}
@@ -571,14 +571,14 @@
 	switch ( [ [ [ exMenu selectedTabViewItem ] identifier ] intValue ] ) {
 	case 1:
 		//  voltage
-		re = [ [ NSApp delegate ] doubleValueForObject:[ exVoltageMatrix cellAtRow:0 column:0 ] ] ;
-		im = [ [ NSApp delegate ] doubleValueForObject:[ exVoltageMatrix cellAtRow:1 column:0 ] ] ;
+		re = [ (ApplicationDelegate*)[ NSApp delegate ] doubleValueForObject:[ exVoltageMatrix cellAtRow:0 column:0 ] ] ;
+		im = [ (ApplicationDelegate*)[ NSApp delegate ] doubleValueForObject:[ exVoltageMatrix cellAtRow:1 column:0 ] ] ;
 		seg = [ self excitationSegment:exLocationMatrix segNumber:exLocationSegment ] ;
 		return [ NSString stringWithFormat:@"voltageFeedAtSegment(_e%d,%f,%f,%d);\n", index, re, im, seg ] ;
 	case 2:
 		//  current
-		re = [ [ NSApp delegate ] doubleValueForObject:[ currentMatrix cellAtRow:0 column:0 ] ] ;
-		im = [ [ NSApp delegate ] doubleValueForObject:[ currentMatrix cellAtRow:1 column:0 ] ] ;
+		re = [ (ApplicationDelegate*)[ NSApp delegate ] doubleValueForObject:[ currentMatrix cellAtRow:0 column:0 ] ] ;
+		im = [ (ApplicationDelegate*)[ NSApp delegate ] doubleValueForObject:[ currentMatrix cellAtRow:1 column:0 ] ] ;
 		seg = [ self excitationSegment:curLocationMatrix segNumber:curLocationSegment ] ;
 		return [ NSString stringWithFormat:@"currentFeedAtSegment(_e%d,%f,%f,%d);\n", index, re, im, seg ] ;
 		break ;
@@ -598,14 +598,14 @@
 	
 	
 	if ( string == nil || [ string length ] == 0 ) {		
-		if ( cellName != nil ) [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Empty \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
+		if ( cellName != nil ) [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Empty \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
 		// empty cell
 		resultValue = 0.0 ;
 	}
 	else {
-		result = [ [ [ NSApp delegate ] currentSpreadsheet ] evaluateFormula:string ] ;
+		result = [ [ (ApplicationDelegate*)[ NSApp delegate ] currentSpreadsheet ] evaluateFormula:string ] ;
 		if ( result.errorCode != 0 ) {
-			if ( cellName != nil ) [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Formula error in \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
+			if ( cellName != nil ) [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Formula error in \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
 			resultValue = 0.0 ;
 		}
 		else {
@@ -624,14 +624,14 @@
 	
 	string = [ [ matrix cellAtRow:row column:0 ] stringValue ] ;
 	if ( string == nil || [ string length ] == 0 ) {		
-		if ( cellName != nil ) [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Empty \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
+		if ( cellName != nil ) [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Empty \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
 		// empty cell
 		resultValue = 0.0 ;
 	}
 	else {
-		result = [ [ [ NSApp delegate ] currentSpreadsheet ] evaluateFormula:string ] ;
+		result = [ [ (ApplicationDelegate*)[ NSApp delegate ] currentSpreadsheet ] evaluateFormula:string ] ;
 		if ( result.errorCode != 0 ) {
-			if ( cellName != nil ) [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Formula error in \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
+			if ( cellName != nil ) [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Formula error in \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
 			resultValue = 0.0 ;
 		}
 		else {
@@ -649,12 +649,12 @@
 	string = [ [ matrix cellAtRow:row column:0 ] stringValue ] ;
 	if ( string == nil || [ string length ] == 0 ) {
 		// empty cell
-		if ( cellName != nil ) [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Empty \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
+		if ( cellName != nil ) [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Empty \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
 		return 0.0 ;
 	}
-	result = [ [ [ NSApp delegate ] currentSpreadsheet ] evaluateFormula:string ] ;
+	result = [ [ (ApplicationDelegate*)[ NSApp delegate ] currentSpreadsheet ] evaluateFormula:string ] ;
 	if ( result.errorCode != 0 ) {
-		if ( cellName != nil ) [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Formula error in \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
+		if ( cellName != nil ) [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Formula error in \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
 		return 0.0 ;
 	}
 	return result.value ;
@@ -668,12 +668,12 @@
 	string = [ [ matrix cellAtRow:row column:0 ] stringValue ] ;
 	if ( string == nil || [ string length ] == 0 ) {
 		// empty cell
-		if ( cellName != nil ) [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Empty \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
+		if ( cellName != nil ) [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Empty \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
 		return 0 ;
 	}
-	result = [ [ [ NSApp delegate ] currentSpreadsheet ] evaluateFormula:string ] ;
+	result = [ [ (ApplicationDelegate*)[ NSApp delegate ] currentSpreadsheet ] evaluateFormula:string ] ;
 	if ( result.errorCode != 0 ) {
-		if ( cellName != nil ) [ [ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Formula error in \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
+		if ( cellName != nil ) [ (ApplicationDelegate*)[ NSApp delegate ] insertError:[ NSString stringWithFormat:@"Formula error in \"%s\" cell of row %d of spreadsheet", cellName, spreadsheetRow ] ] ;
 		return 0 ;
 	}
 	return ( result.value + 0.1 ) ;

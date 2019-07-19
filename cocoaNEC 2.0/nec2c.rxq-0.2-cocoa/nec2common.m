@@ -7204,7 +7204,12 @@ static void load( int *ldtyp, int *ldtag, int *ldtagf, int *ldtagt,
 //  v0.88  move needs to have overlapable attribute
 #define OVERLOADABLE __attribute__((overloadable))
 
-static OVERLOADABLE void move( doubletype rox, doubletype roy, doubletype roz, doubletype xs,
+//ulthiel: get error "redeclaration of 'move' must not have the 'overloadable' attribute
+//original
+//static OVERLOADABLE void move( doubletype rox, doubletype roy, doubletype roz, doubletype xs,
+//                              doubletype ys, doubletype zs, int its, int nrpt, int itgi )
+//removing the OVERLOADABLE
+static void move( doubletype rox, doubletype roy, doubletype roz, doubletype xs,
     doubletype ys, doubletype zs, int its, int nrpt, int itgi )
 {
   int nrp, ix, i1, k, ir, i, ii, mreq;

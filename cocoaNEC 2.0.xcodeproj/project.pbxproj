@@ -1222,7 +1222,7 @@
 				TargetAttributes = {
 					84752C131CF37BA20089D3F7 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = CQ85XWB343;
+						DevelopmentTeam = EDK9R8V6D9;
 					};
 				};
 			};
@@ -1231,6 +1231,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1617,6 +1618,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = EDK9R8V6D9;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				INFOPLIST_FILE = "cocoaNEC 2.0/cocoaNEC 2.0-Info.plist";
@@ -1636,6 +1638,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = EDK9R8V6D9;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				INFOPLIST_FILE = "cocoaNEC 2.0/cocoaNEC 2.0-Info.plist";

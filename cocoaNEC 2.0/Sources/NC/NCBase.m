@@ -269,7 +269,7 @@
 
 - (void)dispatchEngine
 {
-	runResult = *[ [ NSApp delegate ] runNECEngine:inputPath output:outputPath sourcePath:stack.sourcePath useQuad:[ [ compiler system ] useQuadPrecision ] ] ;
+	runResult = *[ (ApplicationDelegate*)[ NSApp delegate ] runNECEngine:inputPath output:outputPath sourcePath:stack.sourcePath useQuad:[ [ compiler system ] useQuadPrecision ] ] ;
 	
 	if ( runResult.errorCode == 0 ) {
 		//  since output processing involves NSViews, do it in the main thread
@@ -326,7 +326,7 @@
 	Boolean resetAllContexts ;
     
 	resetAllContexts = ( runModelCount < 1 ) || ( [ stack.system keepDataBetweenModelRuns ] == NO ) ;
-	[ [ NSApp delegate ] displayNECOutput:stack.sourcePath hollerith:inputPath lpt:outputPath source:stack.sourcePath exceptions:stack.exceptions resetContext:resetAllContexts result:&runResult ] ;
+	[ (ApplicationDelegate*)[ NSApp delegate ] displayNECOutput:stack.sourcePath hollerith:inputPath lpt:outputPath source:stack.sourcePath exceptions:stack.exceptions resetContext:resetAllContexts result:&runResult ] ;
 }
 
 - (Boolean)dispatchNEC2
