@@ -281,10 +281,10 @@ static void stopnec( int flag )
 }
 
 #ifdef GENERATE_DOUBLE_NEC
-int necmaindouble() ;
+int necmaindouble(void) ; //ulthiel: added void in parantheses; otherwise warning
 int necDouble( char *inputFilename, char *outputFileName, int processes )
 #else
-int necmain() ;
+int necmain(void) ; //ulthiel: added void in parantheses; otherwise warning
 int necQuad( char *inputFilename, char *outputFileName, int processes )
 #endif
 {

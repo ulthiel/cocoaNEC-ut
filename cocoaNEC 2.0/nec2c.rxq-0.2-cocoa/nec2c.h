@@ -83,7 +83,7 @@
 #define cmplx(r, i) ((r)+(i)*CPLX_01)
 
 /* somnec.c */
-void	initSomnec() ;
+void	initSomnec(void) ; //ulthiel: added void in parantheses; otherwise "not a prototype" warning
 void 	somnec(double epr, double sig, double fmhz);
 
 

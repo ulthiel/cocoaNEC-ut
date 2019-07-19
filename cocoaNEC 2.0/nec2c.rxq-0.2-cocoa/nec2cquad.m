@@ -20,7 +20,7 @@ typedef long double complex complextype ;
 #define	cimagx( v )			( cimagl( v ) )
 
 
-int necmain() ;
+int necmain(void) ; //ulthiel: added void in parantheses; otherwise warning
 
 static void 	test(doubletype f1r, doubletype f2r, doubletype *tr, doubletype f1i, doubletype f2i, doubletype *ti, doubletype dmin);
 static void 	testdouble(double f1r, double f2r, double *tr, double f1i, double f2i, double *ti, double dmin);

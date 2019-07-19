@@ -28,7 +28,6 @@
 #import "RadiationPattern.h"
 #import "StructureElement.h"
 
-
 //	NEC4Context subclass of OutputContext class handles the format exceptions for NEC-4 (vs nec2c).
 
 @implementation NEC4Context
