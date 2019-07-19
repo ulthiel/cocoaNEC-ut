@@ -60,7 +60,7 @@
 	<key>CFBundleIconFile</key>
 	<string>NEC2</string>
 	<key>CFBundleIdentifier</key>
-	<string>w7ay.cocoaNEC-2.0</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -68,7 +68,7 @@
 	<key>CFBundleSignature</key>
 	<string>Burk</string>
 	<key>CFBundleVersion</key>
-	<string>0.92</string>
+	<string>0.92-ut</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.education</string>
 	<key>NSMainNibFile</key>
