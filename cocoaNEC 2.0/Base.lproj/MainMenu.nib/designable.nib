@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15G18013" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1050" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
@@ -65,12 +65,14 @@
                 <menuItem title="File" id="285">
                     <menu key="submenu" title="File" id="286">
                         <items>
-                            <menuItem title="New Spreadsheet Model" keyEquivalent="n" id="617">
+                            <menuItem title="New Spreadsheet Model" id="617">
+                                <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="newModel:" target="543" id="620"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Open Spreadsheet Model..." keyEquivalent="o" id="284">
+                            <menuItem title="Open Spreadsheet Model..." id="284">
+                                <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openModel:" target="543" id="644"/>
                                 </connections>
@@ -81,12 +83,12 @@
                             <menuItem isSeparatorItem="YES" id="692">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="New NC Model" id="817">
+                            <menuItem title="New NC Model" keyEquivalent="n" id="817">
                                 <connections>
                                     <action selector="newNCModel:" target="543" id="826"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Open NC Model..." id="818">
+                            <menuItem title="Open NC Model..." keyEquivalent="o" id="818">
                                 <connections>
                                     <action selector="openNCModel:" target="543" id="827"/>
                                 </connections>
@@ -521,28 +523,26 @@
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="640">
                         <rect key="frame" x="2" y="2" width="642" height="230"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <clipView key="contentView" id="KKl-nB-sfc">
+                        <clipView key="contentView" drawsBackground="NO" id="KKl-nB-sfc">
                             <rect key="frame" x="1" y="1" width="640" height="228"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <textView importsGraphics="NO" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="641">
+                                <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="641">
                                     <rect key="frame" x="0.0" y="0.0" width="640" height="228"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <size key="minSize" width="640" height="228"/>
                                     <size key="maxSize" width="1316" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="640" height="228"/>
-                                    <size key="maxSize" width="1316" height="10000000"/>
                                 </textView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="YES" id="1017">
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="YES" id="1017">
                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="1016">
+                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="1016">
                             <rect key="frame" x="-22" y="1" width="11" height="56"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
@@ -566,7 +566,7 @@
                 <outlet property="recentMenu" destination="821" id="830"/>
             </connections>
         </customObject>
-        <window title="cocoaNEC Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="993" userLabel="Preference Panel" customClass="NSPanel">
+        <window title="cocoaNEC Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="993" userLabel="Preference Panel" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="372" width="284" height="138"/>
@@ -575,7 +575,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="284" height="138"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <box autoresizesSubviews="NO" title=" NEC Engine " boxType="oldStyle" borderType="line" id="1088">
+                    <box autoresizesSubviews="NO" boxType="oldStyle" borderType="line" title=" NEC Engine " id="1088">
                         <rect key="frame" x="16" y="14" width="254" height="110"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <view key="contentView" id="Ws8-pU-cEB">
@@ -619,8 +619,6 @@
                                 </button>
                             </subviews>
                         </view>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                 </subviews>
             </view>
@@ -636,7 +634,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="360" height="206"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <box title="cocoaNEC" boxType="oldStyle" borderType="line" titlePosition="noTitle" id="K0B-Cb-Zeg">
+                    <box boxType="oldStyle" borderType="line" title="cocoaNEC" titlePosition="noTitle" id="K0B-Cb-Zeg">
                         <rect key="frame" x="6" y="5" width="348" height="195"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView" id="Fr2-h1-sxd">
@@ -668,8 +666,6 @@
                                 </textField>
                             </subviews>
                         </view>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                 </subviews>
             </view>
@@ -677,6 +673,6 @@
         </window>
     </objects>
     <resources>
-        <image name="NSApplicationIcon" width="128" height="128"/>
+        <image name="NSApplicationIcon" width="32" height="32"/>
     </resources>
 </document>
