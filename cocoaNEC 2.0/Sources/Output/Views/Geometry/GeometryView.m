@@ -537,7 +537,7 @@ static float xyzDistSq( float x, float y, float z, float x1, float y1, float z1 
 	unichar degrees[] = { 0xb0 } ;		//  Unicode for degrees symbol
 	
 	//	draw unit vectors
-	m = 24 ;
+    m = 32 ; //ulthiel: increased from 24 to 32 to get longer vectors
 	bounds = [ self bounds ] ;
 	corner.x = bounds.size.width - 40 ;
 	corner.y = bounds.size.height - 42 ;
@@ -557,6 +557,22 @@ static float xyzDistSq( float x, float y, float z, float x1, float y1, float z1 
 		[ path stroke ] ;
 		[ path removeAllPoints ] ;
 	}
+    
+    //labels for unit vectors (ulthiel)
+    corner.x = x0-m-10;
+    corner.y = y0+10;
+    NSMutableDictionary *attr;
+    attr = [ [ NSMutableDictionary alloc ] initWithCapacity:2 ] ;
+    [ attr setObject:color[1] forKey:NSForegroundColorAttributeName ] ;
+    [ [ NSString stringWithFormat:@"%s", "x" ] drawAtPoint:corner withAttributes:attr ] ;
+    attr = [ [ NSMutableDictionary alloc ] initWithCapacity:2 ] ;
+    [ attr setObject:color[2] forKey:NSForegroundColorAttributeName ] ;
+    corner.y = y0;
+    [ [ NSString stringWithFormat:@"%s", "y" ] drawAtPoint:corner withAttributes:attr ] ;
+    attr = [ [ NSMutableDictionary alloc ] initWithCapacity:2 ] ;
+    [ attr setObject:color[3] forKey:NSForegroundColorAttributeName ] ;
+    corner.y = y0-12;
+    [ [ NSString stringWithFormat:@"%s", "z" ] drawAtPoint:corner withAttributes:attr ] ;
 	
 	if ( captionGeometryInfo == nil ) return ;
 	
