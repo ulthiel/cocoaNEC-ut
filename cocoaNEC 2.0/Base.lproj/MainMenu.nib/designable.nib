@@ -282,7 +282,7 @@
                                     <action selector="openNCWindows:" target="543" id="825"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Execute" keyEquivalent="g" id="814">
+                            <menuItem title="Run" keyEquivalent="g" id="814">
                                 <connections>
                                     <action selector="executeNC:" target="543" id="824"/>
                                 </connections>
