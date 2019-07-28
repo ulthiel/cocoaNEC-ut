@@ -182,6 +182,11 @@
 #define	kCardsTab		8
 #define	kNECListTab		9
 
-
+//ulthiel
+//For keyboard controls in GeometryView
+- (void)upElevationStepper;
+- (void)downElevationStepper;
+- (void)upAzimuthStepper;
+- (void)downAzimuthStepper;
 
 @end

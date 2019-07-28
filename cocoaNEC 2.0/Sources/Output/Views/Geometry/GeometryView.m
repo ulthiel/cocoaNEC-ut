@@ -890,5 +890,44 @@ static float xyzDistSq( float x, float y, float z, float x1, float y1, float z1 
 	if ( state == YES ) [ self setNeedsDisplay:YES ] ; else [ wireCurrent hideWindow ] ;
 }
 
+//ulthiel
+//Keyboard control for GeometryView
+- (BOOL)acceptsFirstResponder
+{
+    return YES;
+}
+
+- (void)keyDown:(NSEvent*)event {
+    
+    unichar code = [[event characters] characterAtIndex:0];
+    BOOL arrow = FALSE;
+    
+    switch (code)
+    {
+        case NSUpArrowFunctionKey:
+        {
+            arrow = TRUE;
+            [ client upElevationStepper ];
+            return;
+        }
+        case NSDownArrowFunctionKey:
+        {
+            arrow = TRUE;
+            [ client downElevationStepper ];
+            return;
+        }
+        case NSLeftArrowFunctionKey:
+        {
+            [ client upAzimuthStepper ];
+            return;
+        }
+        case NSRightArrowFunctionKey:
+        {
+            [ client downAzimuthStepper ];
+            return;
+        }
+    }
+
+}
 
 @end

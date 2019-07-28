@@ -1342,4 +1342,30 @@ static float angleDifference( float angle, float target )
 	return currentContext ;
 }
 
+//ulthiel
+//For keyboard controls in GeometryView
+- (void)upElevationStepper
+{
+    [ elevationStepper setIntValue: [ elevationStepper intValue ] + 5 ];
+    [ self geometryControlsChanged:elevationStepper ];
+}
+
+- (void)downElevationStepper
+{
+    [ elevationStepper setIntValue: [ elevationStepper intValue ] - 5 ];
+    [ self geometryControlsChanged:elevationStepper ];
+}
+
+- (void)upAzimuthStepper
+{
+    [ azimuthStepper setIntValue: [ azimuthStepper intValue ] + 5 ];
+    [ self geometryControlsChanged:azimuthStepper ];
+}
+
+- (void)downAzimuthStepper
+{
+    [ azimuthStepper setIntValue: [ azimuthStepper intValue ] - 5 ];
+    [ self geometryControlsChanged:azimuthStepper ];
+}
+
 @end

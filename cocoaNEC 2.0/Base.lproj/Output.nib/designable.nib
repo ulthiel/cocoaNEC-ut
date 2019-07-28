@@ -667,8 +667,8 @@
                                             <rect key="frame" x="1" y="8" width="596" height="631"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <clipView key="contentView" id="yiu-t8-ffD">
-                                                <rect key="frame" x="1" y="1" width="594" height="629"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <rect key="frame" x="1" y="1" width="580" height="629"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="14" id="76" customClass="NonrespondingTableView">
                                                         <rect key="frame" x="0.0" y="0.0" width="1051" height="629"/>
@@ -1662,7 +1662,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="euQ-MN-E6F">
                         <rect key="frame" x="0.0" y="0.0" width="596" height="311"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView importsGraphics="NO" verticallyResizable="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1189">
                                 <rect key="frame" x="0.0" y="0.0" width="596" height="311"/>
@@ -1820,7 +1820,7 @@
                     <autoresizingMask key="autoresizingMask"/>
                     <clipView key="contentView" drawsBackground="NO" id="Syr-8z-9AA">
                         <rect key="frame" x="1" y="1" width="768" height="529"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1332">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="529"/>
@@ -1864,7 +1864,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="IJC-jN-Lxf">
                         <rect key="frame" x="1" y="1" width="596" height="512"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView id="1348" customClass="PrintScalarView">
                                 <rect key="frame" x="0.0" y="0.0" width="596" height="2012"/>
