@@ -368,10 +368,10 @@ static int circle2[] = { -3, -6, -10, -15, -20, -30, -40, -50, -70, 0 } ;
 	}
 	if ( maxGain > -999 ) {
 		if ( frame.size.width > 450 ) {
-			[ [ NSString stringWithFormat:@"0 dB = %.2f dBi", maxGain ] drawAtPoint:[ scale transformPoint:NSMakePoint( -0.905, 0.84 ) ] withAttributes:infoAttributes ] ;
+			[ [ NSString stringWithFormat:@"0 dB = %.2f dBi", maxGain ] drawAtPoint:[ scale transformPoint:NSMakePoint( 1.2, 1.0 ) ] withAttributes:infoAttributes ] ;
 		} 
 		else {
-			[ [ NSString stringWithFormat:@"%.2f dBi", maxGain ] drawAtPoint:[ scale transformPoint:NSMakePoint( -0.91, 0.84 ) ] withAttributes:smallInfoAttributes ] ;
+			[ [ NSString stringWithFormat:@"%.2f dBi", maxGain ] drawAtPoint:[ scale transformPoint:NSMakePoint( 0.8, 1.0 ) ] withAttributes:smallInfoAttributes ] ;
 		}
 	}
 	else {
@@ -381,10 +381,10 @@ static int circle2[] = { -3, -6, -10, -15, -20, -30, -40, -50, -70, 0 } ;
 	RunInfo *runInfo = [ (ApplicationDelegate*)[ NSApp delegate ] runInfo ] ;
 	if ( runInfo->directivity > -0.5 ) {
 		if ( frame.size.width > 450 ) {
-			[ [ NSString stringWithFormat:@"Directivity = %.2f dB", runInfo->directivity ] drawAtPoint:[ scale transformPoint:NSMakePoint( 0.58, 0.92 ) ] withAttributes:infoAttributes ] ;
+			[ [ NSString stringWithFormat:@"Directivity = %.2f dB", runInfo->directivity ] drawAtPoint:[ scale transformPoint:NSMakePoint( 1.2, 0.96 ) ] withAttributes:infoAttributes ] ;
 		}
 		else {
-			[ [ NSString stringWithFormat:@"%.2f dB", runInfo->directivity ] drawAtPoint:[ scale transformPoint:NSMakePoint( 0.58, 0.92 ) ] withAttributes:smallInfoAttributes ] ;
+			[ [ NSString stringWithFormat:@"%.2f dB", runInfo->directivity ] drawAtPoint:[ scale transformPoint:NSMakePoint( 0.8, 0.92 ) ] withAttributes:smallInfoAttributes ] ;
 
             //  0.92 display azimuth and elevation angles in sumary view plots
             RadiationPattern *radiationPattern = [ arrayOfRadiationPatterns objectAtIndex:0 ] ;
