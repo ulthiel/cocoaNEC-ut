@@ -2,7 +2,7 @@
 
 This is a – not really serious – fork of **Kok Chen's (W7AY)** excellent antenna simulation program **[cocoaNEC](http://www.w7ay.net/site/Applications/cocoaNEC/)**. The are a few (straightforward) things I missed and that's why I created this fork using the source code Chen generously made available on his website under the GPL.
 
-I did not sign the code, so if you get an error like "can't be opened because it is from an unidentified developer" you have to open the application the first time with a right click and then a click on open (see [Apple info](https://support.apple.com/kb/PH14369?locale=en_US)).
+I did not sign the code, so if you get an error like "can't be opened because it is from an unidentified developer" you have to open the application the first time with a right click and then a click on open (see [Apple info](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac)).
 
 If you have any questions/comments/suggestions, just drop me an [mail](mailto:mail@ulthiel.com).
 
