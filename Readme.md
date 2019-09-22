@@ -4,7 +4,7 @@ This is a – not really serious – fork of **Kok Chen's (W7AY)** excellent ant
 
 I did not sign the code, so if you get an error like "can't be opened because it is from an unidentified developer" you have to open the application the first time with a right click and then a click on open (see [Apple info](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac)).
 
-If you have any questions/comments/suggestions, just drop me an [mail](mailto:mail@ulthiel.com).
+If you have any questions/comments/suggestions, just drop me an [email](mailto:mail@ulthiel.com).
 
 73,  
 Ulrich, DK1UT
