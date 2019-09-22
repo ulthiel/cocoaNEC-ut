@@ -15,8 +15,8 @@ Ulrich, DK1UT
 1. Changed Cmd-O and Cmd-N keybord shortcuts from spreadhseet to NC models.
 1. Added xyz coordinate axis labels in geometry view (Output/Views/Geometry/GeometryView.m).
 1. Added keyboard arrow controls for geometry view (Output/Views/Geometry/GeometryView.m, Output/NECOutput.*).
-1. Moved Directivity and 0dB= labels in azimuth and elevation plot to better positions.
-1. Added degree labels in azimuth and elevation plot.
+1. Moved Directivity and 0dB= labels in azimuth and elevation plot to better positions (Output/Views/Patterns/AzimuthView.m, Output/Views/Patterns/ElevationView.m).
+1. Added degree labels in azimuth and elevation plot (Output/Views/Patterns/PatternView.m).
 
 ### Internal
 1. Made it compile with XCode 10.
