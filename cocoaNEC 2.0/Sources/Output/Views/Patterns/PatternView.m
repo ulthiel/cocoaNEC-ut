@@ -511,7 +511,7 @@ static int circle2[] = { -3, -6, -10, -15, -20, -30, -40, -50, -70, 0 } ;
         rad = 60*( 3.1415926/180.0 );
         [ [ NSString stringWithFormat:@"%d°", 60 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad), sin(rad) ) ] withAttributes:textAttributes ] ;
         rad = 90*( 3.1415926/180.0 );
-        [ [ NSString stringWithFormat:@"%d°", 90 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.02, sin(rad) ) ] withAttributes:textAttributes ] ;
+        [ [ NSString stringWithFormat:@"%d°=z", 90 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.02, sin(rad) ) ] withAttributes:textAttributes ] ;
         rad = 120*( 3.1415926/180.0 );
         [ [ NSString stringWithFormat:@"%d°", 60 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.03, sin(rad) ) ] withAttributes:textAttributes ] ;
         rad = 150*( 3.1415926/180.0 );
@@ -522,13 +522,13 @@ static int circle2[] = { -3, -6, -10, -15, -20, -30, -40, -50, -70, 0 } ;
     if (isElevation == false && isEmbedded == NO)
     {
         rad = 0*( 3.1415926/180.0 );
-        [ [ NSString stringWithFormat:@"%d°", 0 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)+0.01, sin(rad)-0.02 ) ] withAttributes:textAttributes ] ;
+        [ [ NSString stringWithFormat:@"%d°=x", 0 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)+0.01, sin(rad)-0.02 ) ] withAttributes:textAttributes ] ;
         rad = 30*( 3.1415926/180.0 );
         [ [ NSString stringWithFormat:@"%d°", 30 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)+0.01, sin(rad)-0.01 ) ] withAttributes:textAttributes ] ;
         rad = 60*( 3.1415926/180.0 );
         [ [ NSString stringWithFormat:@"%d°", 60 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad), sin(rad) ) ] withAttributes:textAttributes ] ;
         rad = 90*( 3.1415926/180.0 );
-        [ [ NSString stringWithFormat:@"%d°", 90 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.02, sin(rad) ) ] withAttributes:textAttributes ] ;
+        [ [ NSString stringWithFormat:@"%d°=y", 90 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.02, sin(rad) ) ] withAttributes:textAttributes ] ;
         rad = 120*( 3.1415926/180.0 );
         [ [ NSString stringWithFormat:@"%d°", 120 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.035, sin(rad)+0.01 ) ] withAttributes:textAttributes ] ;
         rad = 150*( 3.1415926/180.0 );
