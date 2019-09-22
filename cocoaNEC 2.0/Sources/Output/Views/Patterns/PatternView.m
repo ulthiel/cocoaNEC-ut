@@ -384,7 +384,7 @@ static int circle2[] = { -3, -6, -10, -15, -20, -30, -40, -50, -70, 0 } ;
 			[ [ NSString stringWithFormat:@"Directivity = %.2f dB", runInfo->directivity ] drawAtPoint:[ scale transformPoint:NSMakePoint( 1.2, 0.96 ) ] withAttributes:infoAttributes ] ;
 		}
 		else {
-			[ [ NSString stringWithFormat:@"%.2f dB", runInfo->directivity ] drawAtPoint:[ scale transformPoint:NSMakePoint( 0.8, 0.92 ) ] withAttributes:smallInfoAttributes ] ;
+			[ [ NSString stringWithFormat:@"%.2f dB", runInfo->directivity ] drawAtPoint:[ scale transformPoint:NSMakePoint( 0.8, 0.94 ) ] withAttributes:smallInfoAttributes ] ;
 
             //  0.92 display azimuth and elevation angles in sumary view plots
             RadiationPattern *radiationPattern = [ arrayOfRadiationPatterns objectAtIndex:0 ] ;
@@ -498,6 +498,55 @@ static int circle2[] = { -3, -6, -10, -15, -20, -30, -40, -50, -70, 0 } ;
 			[ str drawAtPoint:[ box transformPoint: NSMakePoint( pow( rho, c )+0.005, 0.004 ) ] withAttributes:textAttributes ] ;
 		}
 	}
+    
+    //degree labels
+    float rad;
+    //float xDir = threeDPlotDistance;
+    if (isElevation == true && isEmbedded == NO)
+    {
+        rad = 0*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 0 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)+0.01, sin(rad)-0.02 ) ] withAttributes:textAttributes ] ;
+        rad = 30*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 30 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)+0.01, sin(rad)-0.01 ) ] withAttributes:textAttributes ] ;
+        rad = 60*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 60 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad), sin(rad) ) ] withAttributes:textAttributes ] ;
+        rad = 90*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 90 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.02, sin(rad) ) ] withAttributes:textAttributes ] ;
+        rad = 120*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 60 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.03, sin(rad) ) ] withAttributes:textAttributes ] ;
+        rad = 150*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 30 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.055, sin(rad)-0.01 ) ] withAttributes:textAttributes ] ;
+        rad = 180*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 0 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.045, sin(rad)-0.02 ) ] withAttributes:textAttributes ] ;
+    }
+    if (isElevation == false && isEmbedded == NO)
+    {
+        rad = 0*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 0 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)+0.01, sin(rad)-0.02 ) ] withAttributes:textAttributes ] ;
+        rad = 30*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 30 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)+0.01, sin(rad)-0.01 ) ] withAttributes:textAttributes ] ;
+        rad = 60*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 60 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad), sin(rad) ) ] withAttributes:textAttributes ] ;
+        rad = 90*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 90 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.02, sin(rad) ) ] withAttributes:textAttributes ] ;
+        rad = 120*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 120 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.035, sin(rad)+0.01 ) ] withAttributes:textAttributes ] ;
+        rad = 150*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 150 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.08, sin(rad)-0.01 ) ] withAttributes:textAttributes ] ;
+        rad = 180*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 180 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.09, sin(rad)-0.02 ) ] withAttributes:textAttributes ] ;
+        rad = 210*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 210 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.09, sin(rad)-0.025 ) ] withAttributes:textAttributes ] ;
+        rad = 240*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 240 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.045, sin(rad)-0.055 ) ] withAttributes:textAttributes ] ;
+        rad = 270*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 270 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.04, sin(rad)-0.05 ) ] withAttributes:textAttributes ] ;
+        rad = 300*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 300 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad)-0.03, sin(rad)-0.06 ) ] withAttributes:textAttributes ] ;
+        rad = 330*( 3.1415926/180.0 );
+        [ [ NSString stringWithFormat:@"%d°", 330 ] drawAtPoint:[ box transformPoint: NSMakePoint( cos(rad), sin(rad)-0.04 ) ] withAttributes:textAttributes ] ;
+    }
+    
 	//  now draw actual pattern
 	[ self drawPattern:box ] ;
 
