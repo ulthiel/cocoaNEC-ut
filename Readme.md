@@ -1,4 +1,6 @@
+# cocoaNEC-ut
 
+This is a fork of the excellent antenna modeling program [cocoaNEC](http://www.w7ay.net/site/Applications/cocoaNEC/) by Kok Chen (W7AY). 
 
 ## Changes
 
@@ -10,4 +12,3 @@
 ### Internal
 1. Made it compile with XCode 10.
 1. Fixed a lot of errors and warnings about [ NSApp delegate ] by replacing this by (ApplicationDelegate*)[ NSApp delegate ].
-
