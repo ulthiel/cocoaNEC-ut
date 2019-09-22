@@ -72,7 +72,7 @@
 		radiationPattern = [ arrayOfRadiationPatterns objectAtIndex:i ] ;
 		
 		elev = 90 - fabs( [ radiationPattern meanTheta ] ) ;
-		label = [ NSString stringWithFormat:@"%.3f MHz %4.1f deg.", [ radiationPattern frequency ], elev ] ;
+		label = [ NSString stringWithFormat:@"%.3f MHz, elevation angle %4.1f°", [ radiationPattern frequency ], elev ] ;
 		[ array addObject:[ NSArray arrayWithObjects:label, [ NSNumber numberWithInt:i ], nil ] ] ;
 	}
 	return array ;

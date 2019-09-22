@@ -71,7 +71,7 @@
 	for ( i = 0; i < count; i++ ) {
 		radiationPattern = [ arrayOfRadiationPatterns objectAtIndex:i ] ;
 		azi = [ radiationPattern meanPhi ] ;		
-		label = [ NSString stringWithFormat:@"%.3f MHz %4.1f deg.", [ radiationPattern frequency ], azi ] ;
+		label = [ NSString stringWithFormat:@"%.3f MHz, azimuth angle %4.1f deg.", [ radiationPattern frequency ], azi ] ;
 		[ array addObject:[ NSArray arrayWithObjects:label, [ NSNumber numberWithInt:i ], nil ] ] ;
 	}
 	return array ;
